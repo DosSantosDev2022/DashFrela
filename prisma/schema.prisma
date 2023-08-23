@@ -22,9 +22,12 @@ model Project {
   id           Int    @id @default(autoincrement())
   title        String
   description  String
+  status String // Por exemplo: "em andamento", "concluída", etc.
   freelancer   User   @relation(fields: [freelancerId], references: [id])
   freelancerId Int
   tasks        Task[]
+  startDate DateTime
+  endDate DateTime
 }
 
 model Task {
@@ -33,4 +36,7 @@ model Task {
   status    String // Por exemplo: "em andamento", "concluída", etc.
   projectId Int
   project   Project @relation(fields: [projectId], references: [id])
+  startDate DateTime
+  endDate DateTime
+
 }
