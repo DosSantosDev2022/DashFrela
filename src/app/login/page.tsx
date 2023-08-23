@@ -7,7 +7,7 @@ import React from "react";
 import Link from "next/link";
 import CheckInput from "@/components/inputs/checkBox";
 
-const Login = () => {
+const LoginPage = () => {
   return (
     <div className="flex h-screen  justify-center items-center">
       <div className="w-[364px] h-auto border rounded-xl shadow-md p-8">
@@ -52,4 +52,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

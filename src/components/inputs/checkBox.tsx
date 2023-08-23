@@ -13,7 +13,7 @@ const CheckboxInput = (props: {
     | undefined;
 }) => {
   return (
-    <div className="text-MyColor02 flex gap-1">
+    <div className="text-MyColor02 flex gap-3 text-xs">
       <input type="checkbox" />
       {props.text}
     </div>
