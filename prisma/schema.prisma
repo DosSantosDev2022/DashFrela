@@ -11,32 +11,46 @@ datasource db {
 }
 
 model User {
-  id       Int       @id @default(autoincrement())
+  id       Int    @id @default(autoincrement())
   name     String
-  email    String    @unique
+  email    String @unique
   password String // Ou usar referência a autenticação externa do Supabase
-  projects Project[]
+}
+
+model Client {
+  id               Int       @id @default(autoincrement())
+  name             String
+  sobreNome        String
+  email            String    @unique
+  phone            Int
+  locationPais     String
+  locationCidade   String
+  locationEstado   String
+  locationEndereco String
+  locationCEP      Int
+  projects         Project[]
 }
 
 model Project {
-  id           Int    @id @default(autoincrement())
-  title        String
-  description  String
-  status String // Por exemplo: "em andamento", "concluída", etc.
-  freelancer   User   @relation(fields: [freelancerId], references: [id])
-  freelancerId Int
-  tasks        Task[]
-  startDate DateTime
-  endDate DateTime
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String // Por exemplo: "em andamento", "concluída", etc.
+  client      Client   @relation(fields: [clientId], references: [id])
+  clientId    Int
+  tasks       Task[]
+  startDate   DateTime
+  endDate     DateTime
+  price       Decimal  @db.Decimal(8, 2)
 }
 
 model Task {
-  id        Int     @id @default(autoincrement())
-  title     String
-  status    String // Por exemplo: "em andamento", "concluída", etc.
-  projectId Int
-  project   Project @relation(fields: [projectId], references: [id])
-  startDate DateTime
-  endDate DateTime
-
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String // Por exemplo: "em andamento", "concluída", etc.
+  projectId   Int
+  project     Project  @relation(fields: [projectId], references: [id])
+  startDate   DateTime
+  endDate     DateTime
 }
