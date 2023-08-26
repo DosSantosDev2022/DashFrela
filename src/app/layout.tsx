@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "DashFrela",
+  title: "DashFreela",
   description: "O seu painel adm para",
 };
 
