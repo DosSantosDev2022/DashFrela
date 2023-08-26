@@ -2,12 +2,12 @@ import Image from "next/image";
 
 const LogoDark = () => {
   return (
-    <div>
+    <div className="relative w-[300px] h-[60px]">
       <Image
-        width={250}
-        height={60}
         src={"/Logo-Dark.svg"}
         alt="Logo Dark DashFrela"
+        fill
+        style={{ objectFit: "contain" }}
       />
     </div>
   );
