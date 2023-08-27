@@ -5,8 +5,6 @@ import CardText from "@/components/main/cardText";
 import Footer from "@/components/footer/footer";
 
 export default function Home() {
-
-
   return (
     <div>
       <header>
@@ -19,7 +17,7 @@ export default function Home() {
             Com a DashFreela ficou muito <br /> mais fácil gerenciar os seu
             <br /> projetos freelancer.
           </h1>
-          <p className="text-MyColor02 text-lg font-normal leading-6">
+          <p className="text-MyColor02 text-lg text-center font-normal leading-6">
             A plataforma definitiva para freelancers e profissionais
             independentes que desejam elevar seu
             <br /> nível no gerenciamento de projetos! Nossa missão é
@@ -90,8 +88,7 @@ export default function Home() {
         </div>
       </main>
 
-
-      <Footer/>
+      <Footer />
     </div>
   );
 }

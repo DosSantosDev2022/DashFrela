@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html className="scrollbar-thin scrollbar-thumb-MyColor01" lang="pt-br">
       <body className={poppins.className}>
         <NextAuthProvider>
           {children}
