@@ -10,13 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       Int    @id @default(autoincrement())
-  name     String
-  email    String @unique
-  password String // Ou usar referência a autenticação externa do Supabase
-}
-
 model Client {
   id               Int       @id @default(autoincrement())
   name             String
@@ -37,6 +30,8 @@ model Project {
   description String
   status      String // Por exemplo: "em andamento", "concluída", etc.
   client      Client   @relation(fields: [clientId], references: [id])
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
   clientId    Int
   tasks       Task[]
   startDate   DateTime
@@ -53,4 +48,55 @@ model Task {
   project     Project  @relation(fields: [projectId], references: [id])
   startDate   DateTime
   endDate     DateTime
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  projects      Project[]
+}
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
 }
