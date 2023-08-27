@@ -6,8 +6,13 @@ import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
 import CheckInput from "@/components/inputs/checkBox";
+import {signIn, useSession,} from 'next-auth/react'
 
 const LoginPage = () => {
+
+  const {data} = useSession()
+
+
   return (
     <div className="flex h-screen  justify-center items-center">
       <div className="w-[364px] h-auto border rounded-xl shadow-md p-8">
@@ -25,6 +30,7 @@ const LoginPage = () => {
             Login
           </Button>
           <Button
+            onClick={() => signIn()}
             className=" flex items-center justify-center gap-3 w-full h-10"
             variant="outlined"
           >
