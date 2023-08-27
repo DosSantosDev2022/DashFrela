@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LogoDark = () => {
   return (
-    <div className="relative w-[300px] h-[60px]">
+    <div className="relative w-[250px] h-[60px]">
       <Image
         src={"/Logo-Dark.svg"}
         alt="Logo Dark DashFrela"
