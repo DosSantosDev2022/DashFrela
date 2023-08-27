@@ -13,16 +13,16 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between px-8">
         <LogoDark />
         <div className="flex items-center gap-2 mb-4">
-          <Link href={""}>
+          <Link className="text-2xl" href={""}>
             <FaFacebook />
           </Link>
-          <Link href={""}>
+          <Link className="text-2xl" href={""}>
             <FaInstagram />
           </Link>
-          <Link href={""}>
+          <Link className="text-2xl" href={""}>
             <FaSquareTwitter />
           </Link>
-          <Link href={""}>
+          <Link className="text-2xl" href={""}>
             <FaLinkedin />
           </Link>
         </div>
