@@ -6,8 +6,19 @@ import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
 import CheckboxInput from "@/components/inputs/checkBox";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-const LoginPage = () => {
+const CadastroPage = () => {
+  const handleLoginClick = () => signIn();
+  const { data: session } = useSession(); //
+  const router = useRouter(); 
+  if (session?.user) {
+    // Redireciona o usuário para outra página (por exemplo, Dashboard)
+    router.push("/dashboard");
+    return null; // Pode retornar algo enquanto o redirecionamento ocorre
+  }
+
   return (
     <div className="flex h-screen  justify-center items-center">
       <div className="w-[364px] h-auto border rounded-xl shadow-md p-8">
@@ -31,8 +42,12 @@ const LoginPage = () => {
             <Button className="w-full mt-2 h-[50px]" variant="primary">
               Cadastrar
             </Button>
-            <Button className="w-full mt-2 h-[50px]" variant="outlined">
-            Entre com Google
+            <Button
+              className="w-full mt-2 h-[50px]"
+              variant="outlined"
+              onClick={handleLoginClick}
+            >
+              Entre com Google
             </Button>
           </div>
 
@@ -57,4 +72,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default CadastroPage;

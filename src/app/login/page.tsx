@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 const LoginPage = () => {
   const handleLoginClick = () => signIn();
   const { data: session } = useSession(); // Obtém o estado da sessão
+  console.log(session)
   const router = useRouter(); // Obtém o objeto de roteamento
 
   if (session?.user) {
@@ -48,7 +49,7 @@ const LoginPage = () => {
           <div className="flex justify-around mt-2">
             <Link
               className="text-sm text-MyColor02 font-normal hover:underline"
-              href={""}
+              href={"/cadastro"}
             >
               Criar sua conta
             </Link>
@@ -56,7 +57,7 @@ const LoginPage = () => {
               className="text-sm text-MyColor02 font-normal hover:underline"
               href={""}
             >
-              {" "}
+              {"#"}
               Esqueceu sua senha ?
             </Link>
           </div>
