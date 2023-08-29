@@ -6,12 +6,20 @@ import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
 import CheckInput from "@/components/inputs/checkBox";
-import {signIn, useSession,} from 'next-auth/react'
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
+  const handleLoginClick = () => signIn();
+  const { data: session } = useSession(); // Obtém o estado da sessão
+  const router = useRouter(); // Obtém o objeto de roteamento
 
-  const {data} = useSession()
-
+  if (session?.user) {
+    // Redireciona o usuário para outra página (por exemplo, Dashboard)
+    router.push("/dashboard");
+    return null; // Pode retornar algo enquanto o redirecionamento ocorre
+  }
+  
 
   return (
     <div className="flex h-screen  justify-center items-center">
@@ -30,7 +38,7 @@ const LoginPage = () => {
             Login
           </Button>
           <Button
-            onClick={() => signIn()}
+            onClick={handleLoginClick}
             className=" flex items-center justify-center gap-3 w-full h-10"
             variant="outlined"
           >
