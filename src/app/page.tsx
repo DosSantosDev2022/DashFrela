@@ -3,14 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import CardText from "@/components/main/cardText";
 import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
 
 export default function Home() {
   return (
     <div>
-      <header>
-        <NavBar />
-      </header>
-
+      <Header />
       <main className="container mx-auto flex flex-col items-center justify-center">
         <div className="flex flex-col items-center p-6 gap-8 w-full">
           <h1 className="text-MyColor01 text-2xl lg:text-5xl font-bold text-center w-full">
@@ -87,7 +85,6 @@ export default function Home() {
           />
         </div>
       </main>
-
       <Footer />
     </div>
   );

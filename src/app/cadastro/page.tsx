@@ -1,18 +1,18 @@
 "use client";
 import { FaGoogle } from "react-icons/fa6";
-import Button from "@/components/button";
-import Input from "@/components/inputs/input";
+import Button from "@/components/buttons/button";
+import Input from "@/app/login/components/input";
 import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
-import CheckboxInput from "@/components/inputs/checkBox";
+import CheckboxInput from "@/app/login/components/checkBox";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const CadastroPage = () => {
   const handleLoginClick = () => signIn();
   const { data: session } = useSession(); //
-  const router = useRouter(); 
+  const router = useRouter();
   if (session?.user) {
     // Redireciona o usuário para outra página (por exemplo, Dashboard)
     router.push("/dashboard");

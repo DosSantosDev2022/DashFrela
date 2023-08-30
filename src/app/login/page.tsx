@@ -1,18 +1,18 @@
 "use client";
 import { FaGoogle } from "react-icons/fa6";
-import Button from "@/components/button";
-import Input from "@/components/inputs/input";
+import Button from "@/components/buttons/button";
+import Input from "@/app/login/components/input";
 import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
-import CheckInput from "@/components/inputs/checkBox";
+import CheckInput from "@/app/login/components/checkBox";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const handleLoginClick = () => signIn();
   const { data: session } = useSession(); // Obtém o estado da sessão
-  console.log(session)
+  console.log(session);
   const router = useRouter(); // Obtém o objeto de roteamento
 
   if (session?.user) {
@@ -20,7 +20,6 @@ const LoginPage = () => {
     router.push("/dashboard");
     return null; // Pode retornar algo enquanto o redirecionamento ocorre
   }
-  
 
   return (
     <div className="flex h-screen  justify-center items-center">

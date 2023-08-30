@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "../button";
+import Button from "../buttons/button";
 import LogoDark from "../logo/logo";
 
 export default function NavBar() {
@@ -17,4 +17,3 @@ export default function NavBar() {
     </nav>
   );
 }
-
