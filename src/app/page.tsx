@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <Header />
       <main className="container mx-auto flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center p-6 gap-8 w-full">
+        <div className="flex flex-col items-center p-6 gap-8 w-full m-20">
           <h1 className="text-MyColor01 text-2xl lg:text-5xl font-bold text-center w-full">
             Com a DashFreela ficou muito <br /> mais fácil gerenciar os seu
             <br /> projetos freelancer.
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 mt-16 p-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-16 p-2">
           <CardText
             titulo={"Intuitivo e poderoso"}
             paragrafo={

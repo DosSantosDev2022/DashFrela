@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 p-4">
+    <footer className="mt-32 p-4">
       <div className="flex flex-col lg:flex-row items-center justify-between px-8">
         <LogoDark />
         <div className="flex items-center gap-2 mb-4">
