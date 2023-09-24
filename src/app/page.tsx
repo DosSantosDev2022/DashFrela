@@ -1,4 +1,3 @@
-import NavBar from "@/components/header/navBar";
 import Link from "next/link";
 import Image from "next/image";
 import CardText from "@/components/main/cardText";
