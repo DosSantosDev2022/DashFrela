@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ReactNode } from "react";
-import { MdSpaceDashboard } from "react-icons/md";
 
 interface NavLinksPros {
   icon: ReactNode;

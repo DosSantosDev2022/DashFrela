@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { MdSpaceDashboard } from "react-icons/md";
 import NavLinks from "./links";
 
 const SideBar = () => {
   return (
-    <div className="w-64 h-screen bg-MyColor01 p-6 flex flex-col  gap-6">
+    <div className="w-64 h-full fixed bg-MyColor01 p-6 flex flex-col  gap-6 ">
       <Image width={150} height={50} src={"/Logo-White.svg"} alt={""} />
       <nav className="flex flex-col gap-6 h-full">
         <NavLinks

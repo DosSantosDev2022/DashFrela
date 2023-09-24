@@ -7,11 +7,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-row">
+    <section className="flex flex-row w-full  h-screen overflow-y-hidden">
       <SideBar />
-      <div className="w-full flex flex-col">
+      <div className="flex w-[calc(100%-250px)] ">
         <HeaderDash />
-        <section className="w-full h-full p-2">{children}</section>
+        <main className="overflow-hidden overflow-y-scroll p-4">
+          {children}
+        </main>
       </div>
     </section>
   );

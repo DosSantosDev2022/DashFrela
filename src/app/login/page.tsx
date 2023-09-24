@@ -17,7 +17,7 @@ const LoginPage = () => {
 
   if (session?.user) {
     // Redireciona o usuário para outra página (por exemplo, Dashboard)
-    router.push("/dashboard");
+    router.push("/dashboard/home");
     return null; // Pode retornar algo enquanto o redirecionamento ocorre
   }
 
