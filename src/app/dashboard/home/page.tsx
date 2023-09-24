@@ -1,6 +1,6 @@
 const PageDashboard = () => {
   return (
-    <div>
+    <div className="">
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis cum
         architecto laudantium obcaecati ducimus maxime labore atque explicabo
