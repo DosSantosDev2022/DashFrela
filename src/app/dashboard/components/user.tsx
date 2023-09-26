@@ -24,7 +24,7 @@ const UserProfile = () => {
         />
 
         <button
-          className="text-MyColor03 hover:underline cursor-pointer"
+          className="text-MyColor03 cursor-pointer p-2 rounded-md hover:bg-MyColor01 hover:text-white transition-all"
           onClick={handleLogout}
         >
           Logout
