@@ -7,6 +7,8 @@ import {
 import CardsDash from "./components/cards";
 import ProjectList from "./components/projectsList";
 import Link from "next/link";
+import PerformanceGraphic from "./components/graphic";
+import Teams from "./components/teams";
 
 const PageDashboard = () => {
   return (
@@ -46,9 +48,14 @@ const PageDashboard = () => {
         <ProjectList name={"Nome Projeto"} icon={undefined} />
         <ProjectList name={"Nome Projeto"} icon={undefined} />
         <ProjectList name={"Nome Projeto"} icon={undefined} />
-        <div className="border-t-2 border-MyColor01 bg-white w-full p-2">
+        <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
           <Link href={""}>Ver todos os projetos</Link>
         </div>
+      </div>
+
+      <div className="flex items-start justify-around gap-5">
+        <PerformanceGraphic /> {/* Componente do gráfico de performance */}
+        <Teams /> {/* Componente com resumo dos membros do time */}
       </div>
     </div>
   );
