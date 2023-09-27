@@ -10,38 +10,33 @@ const TasksPage = () => {
         <CreateItens name={"Minhas tarefas"} nameButton={"Criar Tarefas"} />
 
         <div className=" flex gap-3">
-          <CardBackground className={"w-80 h-32"}>
-            <TaskCards
-              name={"Nome projeto"}
-              icon={<FaClipboardCheck />}
-              btnName={"Abrir"}
-              namePriority={"Prioridade Alta"}
-            />
-          </CardBackground>
-          <CardBackground className={"w-80 h-32"}>
-            <TaskCards
-              name={"Nome projeto"}
-              icon={<FaClipboardCheck />}
-              btnName={"Abrir"}
-              namePriority={"Prioridade Média"}
-            />
-          </CardBackground>
-          <CardBackground className={"w-80 h-32"}>
-            <TaskCards
-              name={"Nome projeto"}
-              icon={<FaClipboardCheck />}
-              btnName={"Abrir"}
-              namePriority={"Prioridade Baixa"}
-            />
-          </CardBackground>
-          <CardBackground className={"w-80 h-32"}>
-            <TaskCards
-              name={"Nome projeto"}
-              icon={<FaClipboardCheck />}
-              btnName={"Abrir"}
-              namePriority={"Prioridade Alta"}
-            />
-          </CardBackground>
+          <TaskCards
+            name={"Nome projeto"}
+            icon={<FaClipboardCheck />}
+            btnName={"Abrir"}
+            namePriority={"Prioridade Alta"}
+          />
+
+          <TaskCards
+            name={"Nome projeto"}
+            icon={<FaClipboardCheck />}
+            btnName={"Abrir"}
+            namePriority={"Prioridade Média"}
+          />
+
+          <TaskCards
+            name={"Nome projeto"}
+            icon={<FaClipboardCheck />}
+            btnName={"Abrir"}
+            namePriority={"Prioridade Baixa"}
+          />
+
+          <TaskCards
+            name={"Nome projeto"}
+            icon={<FaClipboardCheck />}
+            btnName={"Abrir"}
+            namePriority={"Prioridade Alta"}
+          />
         </div>
       </div>
     </>
