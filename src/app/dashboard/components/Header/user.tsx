@@ -19,7 +19,7 @@ const UserProfile = () => {
           className="rounded-full"
           width={50}
           height={50}
-          src={data?.user?.image}
+          src={data?.user?.image!}
           alt={"Foto do usuário logado"}
         />
 
