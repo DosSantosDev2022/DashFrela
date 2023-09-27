@@ -2,14 +2,12 @@
 
 import Button from "@/components/buttons/button";
 import CardBackground from "../components/CardBackground ";
+import CreateItens from "../components/createItens";
 
 const ProjectsPage = () => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between p-6 border">
-        <p>Meus Projetos</p>
-        <Button>Criar Projeto</Button>
-      </div>
+      <CreateItens name={"Meus projetos"} nameButton={"Criar Projeto"} />
       <div className="flex flex-col gap-4 items-center justify-between p-6">
         <CardBackground className={""}>
           {/* Cards que listam os projetos criados pelo usuário */}
