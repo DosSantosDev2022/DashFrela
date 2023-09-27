@@ -1,7 +1,11 @@
+import CreateItens from "../components/createItens";
+
 const ClientsPage = () => {
   return (
     <>
-      <h1>Clients Page</h1>
+      <div className="flex flex-col gap-3">
+        <CreateItens name={"Meus clientes"} nameButton={"Cadastrar cliente"} />
+      </div>
     </>
   );
 };
