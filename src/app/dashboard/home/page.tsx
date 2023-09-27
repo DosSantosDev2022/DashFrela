@@ -9,6 +9,7 @@ import ProjectList from "./components/projectsList";
 import Link from "next/link";
 import PerformanceGraphic from "./components/graphic";
 import Teams from "./components/teams";
+import CardBackground from "../components/CardBackground ";
 
 const PageDashboard = () => {
   return (
@@ -39,20 +40,26 @@ const PageDashboard = () => {
           text={"4%"}
         />
       </div>
-      <div className=" bg-white p-4 text-start rounded-md shadow-md">
+      <CardBackground className={"text-start"}>
         <h3 className="font-semibold text-MyColor01 ">Projetos em andamento</h3>
-      </div>
+      </CardBackground>
       <div className="p-4 bg-slate-200 rounded-md  flex flex-col gap-2 shadow-md">
-        <ProjectList name={"Nome Projeto"} icon={undefined} />
-        <ProjectList name={"Nome Projeto"} icon={undefined} />
-        <ProjectList name={"Nome Projeto"} icon={undefined} />
-        <ProjectList name={"Nome Projeto"} icon={undefined} />
-        <ProjectList name={"Nome Projeto"} icon={undefined} />
+        <CardBackground className={""}>
+          <ProjectList name={"Nome Projeto"} icon={undefined} />
+        </CardBackground>
+        <CardBackground className={""}>
+          <ProjectList name={"Nome Projeto"} icon={undefined} />
+        </CardBackground>
+        <CardBackground className={""}>
+          <ProjectList name={"Nome Projeto"} icon={undefined} />
+        </CardBackground>
+        <CardBackground className={""}>
+          <ProjectList name={"Nome Projeto"} icon={undefined} />
+        </CardBackground>
         <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
           <Link href={""}>Ver todos os projetos</Link>
         </div>
       </div>
-
       <div className="flex items-start justify-around gap-5">
         <PerformanceGraphic /> {/* Componente do gráfico de performance */}
         <Teams /> {/* Componente com resumo dos membros do time */}

@@ -8,7 +8,6 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log(NextAuthProvider);
   return (
     <NextAuthProvider>
       <section className="grid grid-cols-12 p-2 w-screen h-screen ">
