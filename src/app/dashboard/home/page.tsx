@@ -45,16 +45,32 @@ const PageDashboard = () => {
       </CardBackground>
       <div className="p-4 bg-slate-200 rounded-md  flex flex-col gap-2 shadow-md">
         <CardBackground className={""}>
-          <ProjectList name={"Nome Projeto"} icon={undefined} />
+          <ProjectList
+            name={"Nome Projeto"}
+            icon={undefined}
+            namePriority={"Prioridade Alta"}
+          />
         </CardBackground>
         <CardBackground className={""}>
-          <ProjectList name={"Nome Projeto"} icon={undefined} />
+          <ProjectList
+            name={"Nome Projeto"}
+            icon={undefined}
+            namePriority={"Prioridade Baixa"}
+          />
         </CardBackground>
         <CardBackground className={""}>
-          <ProjectList name={"Nome Projeto"} icon={undefined} />
+          <ProjectList
+            name={"Nome Projeto"}
+            icon={undefined}
+            namePriority={"Prioridade Média"}
+          />
         </CardBackground>
         <CardBackground className={""}>
-          <ProjectList name={"Nome Projeto"} icon={undefined} />
+          <ProjectList
+            name={"Nome Projeto"}
+            icon={undefined}
+            namePriority={"Prioridade Alta"}
+          />
         </CardBackground>
         <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
           <Link href={""}>Ver todos os projetos</Link>

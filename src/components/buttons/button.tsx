@@ -10,12 +10,12 @@ const Button = ({ className, variant = "primary", ...props }: ButtonProps) => {
     primary: "bg-MyColor01 text-white hover:bg-MyColor02",
     outlined: "bg-transparent border-2 border-MyColor02 text-MyColor01",
     danger:
-      "text-red-500 border-red-500 border hover:bg-red-600 bg-transparent hover:text-white",
+      "text-red-500 border-red-500 border hover:bg-red-600 bg-transparent hover:text-white ",
   };
 
   const _className = twMerge(
     variantClasses[variant],
-    "appearance-none rounded-lg p-2 text-sm font-medium shadow transition-all",
+    "appearance-none rounded-lg p-2 text-sm font-medium shadow hover:scale-105 transition-all",
     className
   );
   return (

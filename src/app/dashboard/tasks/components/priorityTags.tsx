@@ -4,7 +4,7 @@ interface PrioridadeTasksProps {
   namePriority: string;
 }
 
-const PrioridadeTasks = ({ namePriority }: PrioridadeTasksProps) => {
+const PriorityTag = ({ namePriority }: PrioridadeTasksProps) => {
   // Função para determinar a classe de cor com base no nome da prioridade
   const getClassBasedOnPriority = (prioridade: string) => {
     switch (prioridade) {
@@ -29,4 +29,4 @@ const PrioridadeTasks = ({ namePriority }: PrioridadeTasksProps) => {
   );
 };
 
-export default PrioridadeTasks;
+export default PriorityTag;

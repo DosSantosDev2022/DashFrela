@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
+import PriorityTag from "../../tasks/components/priorityTags";
 
 interface ProjectListProps {
   name: string;
   icon: ReactNode;
+  namePriority: string;
 }
 
-const ProjectList = ({ name, icon }: ProjectListProps) => {
+const ProjectList = ({ name, icon, namePriority }: ProjectListProps) => {
   return (
     <>
       <div>
@@ -16,7 +18,7 @@ const ProjectList = ({ name, icon }: ProjectListProps) => {
         <p>Cliente</p>
       </div>
       <div>
-        <p>prioridade</p>
+        <PriorityTag namePriority={namePriority} />
       </div>
       <div>
         <p>membros</p>
