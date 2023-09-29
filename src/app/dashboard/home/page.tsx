@@ -73,7 +73,7 @@ const PageDashboard = () => {
           />
         </CardBackground>
         <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
-          <Link href={""}>Ver todos os projetos</Link>
+          <Link href={"/dashboard/projects"}>Ver todos os projetos</Link>
         </div>
       </div>
       <div className="flex items-start justify-around gap-5">
