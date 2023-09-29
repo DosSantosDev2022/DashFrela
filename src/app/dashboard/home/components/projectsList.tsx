@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import PriorityTag from "../../tasks/components/priorityTags";
+import { FaUserGroup } from "react-icons/fa6";
 
 interface ProjectListProps {
   name: string;
@@ -12,16 +13,18 @@ const ProjectList = ({ name, icon, namePriority }: ProjectListProps) => {
     <>
       <div>
         <i>{icon}</i>
-        <p>{name}</p>
+        <p className="text-base font-semibold text-MyColor01">{name}</p>
       </div>
       <div>
-        <p>Cliente</p>
+        <p className="text-base font-semibold text-MyColor02">Cliente</p>
       </div>
       <div>
         <PriorityTag namePriority={namePriority} />
       </div>
       <div>
-        <p>membros</p>
+        <i className="text-2xl">
+          <FaUserGroup /> {/* Icone do usuário */}
+        </i>
       </div>
       <div>
         <p>progresso</p>
