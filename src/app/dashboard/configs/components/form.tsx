@@ -1,6 +1,6 @@
 import Button from "@/components/buttons/button";
 import TextField from "@/components/inputs/textField";
-import Label from "./label";
+import Label from "../../../../components/inputs/label";
 
 const Form = () => {
   return (

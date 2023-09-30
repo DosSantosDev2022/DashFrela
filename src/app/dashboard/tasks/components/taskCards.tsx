@@ -1,7 +1,7 @@
 import Button from "@/components/buttons/button";
 import { ReactNode } from "react";
 import CardBackground from "../../components/CardBackground ";
-import PriorityTag from "./priorityTags";
+import PriorityTag from "../../components/priorityTags";
 
 interface TaskCardsProps {
   name: string;

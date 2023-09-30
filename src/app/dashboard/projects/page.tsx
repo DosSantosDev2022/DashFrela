@@ -2,13 +2,22 @@
 
 import Button from "@/components/buttons/button";
 import CardBackground from "../components/CardBackground ";
-import CreateItens from "../components/createItens";
-import PriorityTag from "../tasks/components/priorityTags";
+
+import PriorityTag from "../components/priorityTags";
+import CreateItensProjects from "./components/createItens";
 
 const ProjectsPage = () => {
+  const handleCreateProject = () => {
+    const novoProjeto = {};
+  };
+
   return (
     <div className="flex flex-col gap-3">
-      <CreateItens name={"Meus projetos"} nameButton={"Criar Projeto"} />
+      <CreateItensProjects
+        name={"Meus projetos"}
+        nameButton={"Criar Projeto"}
+        onCreate={handleCreateProject}
+      />
 
       <div className="flex flex-col gap-4 items-center justify-between p-6 border">
         <CardBackground className={""}>

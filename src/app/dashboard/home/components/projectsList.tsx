@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import PriorityTag from "../../tasks/components/priorityTags";
+import PriorityTag from "../../components/priorityTags";
 import { FaUserGroup } from "react-icons/fa6";
 
 interface ProjectListProps {
