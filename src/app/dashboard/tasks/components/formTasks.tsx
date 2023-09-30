@@ -4,10 +4,19 @@ import Label from "@/components/inputs/label";
 import Select from "@/components/inputs/select";
 import TextArea from "@/components/inputs/textArea";
 import TextField from "@/components/inputs/textField";
+import ModalSubTasks from "./modal/modalSubTasks";
 
 interface FormTasksProps {}
 
 const FormTasks: React.FC<FormTasksProps> = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const openModal = () => {
+    setIsOpenModal(true);
+  };
+  const closeModal = () => {
+    setIsOpenModal(false);
+  };
+
   return (
     <form className="space-y-5">
       <div className="flex flex-col gap-2">
@@ -41,7 +50,7 @@ const FormTasks: React.FC<FormTasksProps> = () => {
         </div>
       </div>
       <div className="w-full">
-        <Button type="button" className="w-full">
+        <Button type="button" className="w-full" onClick={openModal}>
           Adicionar Subtarefas
         </Button>
       </div>
@@ -52,6 +61,8 @@ const FormTasks: React.FC<FormTasksProps> = () => {
         <Button>Salvar Tarefa</Button>
         <Button variant="danger">Cancelar</Button>
       </div>
+
+      {isOpenModal && <ModalSubTasks onClose={closeModal} />}
     </form>
   );
 };
