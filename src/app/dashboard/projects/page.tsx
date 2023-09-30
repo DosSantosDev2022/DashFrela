@@ -4,7 +4,7 @@ import Button from "@/components/buttons/button";
 import CardBackground from "../components/CardBackground ";
 
 import PriorityTag from "../components/priorityTags";
-import CreateItensProjects from "./components/createItens";
+import CreateItensProjects from "./components/projectcreateItens";
 import { useState } from "react";
 import ModalProjectResume from "./components/modal/modalProjectResume";
 

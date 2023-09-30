@@ -1,13 +1,15 @@
 import { FaClipboardCheck } from "react-icons/fa6";
-import CardBackground from "../components/CardBackground ";
-import CreateItens from "../components/createItens";
 import TaskCards from "./components/taskCards";
+import CreateItensTasks from "./components/taskscreateItens";
 
 const TasksPage = () => {
   return (
     <>
       <div className="flex flex-col gap-3">
-        <CreateItens name={"Minhas tarefas"} nameButton={"Criar Tarefas"} />
+        <CreateItensTasks
+          name={"Minhas tarefas"}
+          nameButton={"Criar Tarefas"}
+        />
 
         <div className=" flex gap-3">
           <TaskCards
