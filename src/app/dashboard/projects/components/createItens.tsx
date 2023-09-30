@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/buttons/button";
 import { useState } from "react";
-import Modal from "../../projects/components/createProject";
+import Modal from "./modal/modalcreateProject";
 
 interface CreateItensProjectsProps {
   name: string;
@@ -26,7 +26,7 @@ const CreateItensProjects = ({
       <p className="text-MyColor02 font-medium text-lg">{name}</p>
       <Button onClick={openModal}>{nameButton}</Button>
 
-      {isModalOpen && <Modal onClose={closeModal} />}
+      {isModalOpen && <Modal />}
     </div>
   );
 };

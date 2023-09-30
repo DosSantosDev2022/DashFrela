@@ -1,9 +1,16 @@
+"use client";
+
+import Button from "@/components/buttons/button";
 import Label from "@/components/inputs/label";
 import Select from "@/components/inputs/select";
 import TextArea from "@/components/inputs/textArea";
 import TextField from "@/components/inputs/textField";
 
-const FormProjects = () => {
+interface FormProjectsProps {
+  onClose: () => void;
+}
+
+const FormProjects = ({ onClose }: FormProjectsProps) => {
   const opcoes = [
     { value: "Prioridade Alta", label: "Prioridade Alta" },
     { value: "Prioridade média", label: "Prioridade média" },
@@ -21,13 +28,12 @@ const FormProjects = () => {
         <TextField
           type={"text"}
           id={"nome"}
-          value=""
           placeholder="Digite o nome do seu projeto"
         />
       </div>
       <div className="flex flex-col gap-2">
         <Label htmlFor={"nome"}>Descrição do Projeto</Label>
-        <TextArea placeholder="Descreva o seu projeto" value="" />
+        <TextArea placeholder="Descreva o seu projeto" value={""} />
       </div>
       <div className="flex flex-col gap-2">
         <Label htmlFor={"nome"}>Selecione cliente</Label>
@@ -39,7 +45,6 @@ const FormProjects = () => {
           <TextField
             type={"date"}
             id={"dataInicio"}
-            value=""
             placeholder="Digite o nome do seu projeto"
           />
         </div>
@@ -48,24 +53,31 @@ const FormProjects = () => {
           <TextField
             type={"date"}
             id={"dataEntrega"}
-            value=""
             placeholder="Digite o nome do seu projeto"
           />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor={""}>Prioridade</Label>
-          <Select options={opcoes} value="" />
+          <Select options={opcoes} />
         </div>
       </div>
       <div className="flex items-center gap-5">
         <div className="flex flex-col gap-2 ">
           <Label htmlFor={""}>Valor do projeto</Label>
-          <TextField type={"number"} id={"valor"} value="" />
+          <TextField type={"number"} id={"valor"} />
         </div>
         <div className="flex flex-col gap-2 ">
           <Label htmlFor={""}>Forma de pagamento</Label>
-          <Select options={pagamentos} value={""} />
+          <Select options={pagamentos} />
         </div>
+      </div>
+      <div className="flex items-center w-full  p-3 gap-2 mt-3">
+        {/* Botão para criar o projeto */}
+        <Button>Criar Projeto</Button>
+        {/* Botão para fechar o Modal */}
+        <Button variant="danger" onClick={onClose}>
+          Fechar
+        </Button>
       </div>
     </form>
   );

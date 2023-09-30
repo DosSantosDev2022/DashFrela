@@ -6,7 +6,7 @@ interface CardBackgroundProps {
 }
 
 const CardBackground = ({ children, className }: CardBackgroundProps) => {
-  const cardClasses = `bg-white rounded-md p-6 shadow-lg w-full flex justify-between items-center ${
+  const cardClasses = `bg-white rounded-md p-6 shadow-lg  flex justify-between items-center ${
     className || ""
   }`;
 
