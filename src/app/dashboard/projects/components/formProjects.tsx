@@ -6,11 +6,9 @@ import Select from "@/components/inputs/select";
 import TextArea from "@/components/inputs/textArea";
 import TextField from "@/components/inputs/textField";
 
-interface FormProjectsProps {
-  onClose: () => void;
-}
+interface FormProjectsProps {}
 
-const FormProjects = ({ onClose }: FormProjectsProps) => {
+const FormProjects = ({}: FormProjectsProps) => {
   const opcoes = [
     { value: "Prioridade Alta", label: "Prioridade Alta" },
     { value: "Prioridade média", label: "Prioridade média" },
@@ -73,11 +71,7 @@ const FormProjects = ({ onClose }: FormProjectsProps) => {
       </div>
       <div className="flex items-center w-full  p-3 gap-2 mt-3">
         {/* Botão para criar o projeto */}
-        <Button>Criar Projeto</Button>
-        {/* Botão para fechar o Modal */}
-        <Button variant="danger" onClick={onClose}>
-          Fechar
-        </Button>
+        <Button>Cadastrar Projeto</Button>
       </div>
     </form>
   );

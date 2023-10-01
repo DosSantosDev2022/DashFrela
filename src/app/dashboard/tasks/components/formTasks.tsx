@@ -59,7 +59,6 @@ const FormTasks: React.FC<FormTasksProps> = () => {
       </div>
       <div className="w-full flex gap-3">
         <Button>Salvar Tarefa</Button>
-        <Button variant="danger">Cancelar</Button>
       </div>
 
       {isOpenModal && <ModalSubTasks onClose={closeModal} />}

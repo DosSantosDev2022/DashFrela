@@ -9,7 +9,9 @@ const UserProfile = () => {
   const router = useRouter(); // Obtém o objeto de roteamento
   const handleLogout = async () => {
     await signOut(); // Faz logout
-    router.push("/"); // Redireciona para a página inicial (home)
+    console.log("Redirecionando para a página de login");
+
+    router.push("/login"); // Redireciona para a página inicial (home)
   };
 
   return (

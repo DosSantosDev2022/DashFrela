@@ -56,7 +56,6 @@ const LoginPage = () => {
               className="text-sm text-MyColor02 font-normal hover:underline"
               href={""}
             >
-              {"#"}
               Esqueceu sua senha ?
             </Link>
           </div>

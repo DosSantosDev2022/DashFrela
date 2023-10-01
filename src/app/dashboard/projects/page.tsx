@@ -16,16 +16,12 @@ const ProjectsPage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const handleCreateProject = () => {
-    const novoProjeto = {};
-  };
 
   return (
     <div className="flex flex-col gap-3">
       <CreateItensProjects
         name={"Meus projetos"}
         nameButton={"Criar Projeto"}
-        onCreate={handleCreateProject}
       />
 
       <div className="flex flex-col gap-4 items-center justify-between p-6 border">
