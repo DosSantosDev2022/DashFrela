@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode, useState } from "react";
 import Button from "@/components/buttons/button";
 import Label from "@/components/inputs/label";

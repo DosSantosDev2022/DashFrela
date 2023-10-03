@@ -4,9 +4,11 @@ import Button from "@/components/buttons/button";
 import CardBackground from "../components/CardBackground ";
 
 import PriorityTag from "../components/priorityTags";
-import CreateItensProjects from "./components/projectcreateItens";
+
 import { useState } from "react";
 import ModalProjectResume from "./components/modal/modalProjectResume";
+import CreateItems from "../components/createItens";
+import ModalProjects from "./components/modal/modalcreateProject";
 
 const ProjectsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,9 +21,10 @@ const ProjectsPage = () => {
 
   return (
     <div className="flex flex-col gap-3">
-      <CreateItensProjects
-        name={"Meus projetos"}
-        nameButton={"Criar Projeto"}
+      <CreateItems
+        name={"Meus Projetos"}
+        nameButton={"Criar projeto"}
+        modalContent={<ModalProjects onClose={closeModal} />}
       />
 
       <div className="flex flex-col gap-4 items-center justify-between p-6 border">

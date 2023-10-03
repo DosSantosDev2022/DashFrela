@@ -1,22 +1,21 @@
-import React from "react";
-import FormProjects from "../formProjects";
+import FormClients from "./formClients";
 
-const ModalProjects = () => {
+const ModalClient = () => {
   return (
     <>
       <header className="w-full border-b p-3">
         <h2 className="text-lg font-semibold text-MyColor01">
-          Cadastrar novo projeto
+          Cadastrar novo cliente
         </h2>
         <p className="text-sm font-light text-MyColor02">
-          Preencha as insformações do seu projeto
+          Preencha as insformações do cliente
         </p>
       </header>
       <main className="w-full p-6">
-        <FormProjects />
+        <FormClients />
       </main>
     </>
   );
 };
 
-export default ModalProjects;
+export default ModalClient;
