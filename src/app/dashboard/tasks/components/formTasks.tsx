@@ -22,20 +22,20 @@ const FormTasks: React.FC<FormTasksProps> = () => {
   return (
     <form className="space-y-5">
       <div className="flex flex-col gap-2">
-        <Label htmlFor={"nome"}>Nome da tarefa</Label>
+        <Label htmlFor={"nameTask"}>Nome da tarefa</Label>
         <TextField
           type={"text"}
-          id={"nome"}
+          id={"nameTask"}
           placeholder="Digite o nome da tarefa"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <Label htmlFor={"nome"}>Descrição da tarefa</Label>
-        <TextArea placeholder="Resuma a sua tarefa" />
+        <Label htmlFor={"taskdescription"}>Descrição da tarefa</Label>
+        <TextArea id="taskdescription" placeholder="Resuma a sua tarefa" />
       </div>
       <div className="flex flex-col gap-2">
-        <Label htmlFor={"nome"}>Vincular a um projeto</Label>
-        <Select options={[]} />
+        <Label htmlFor={"taskproject"}>Vincular a um projeto</Label>
+        <Select id="taskproject" options={[]} />
       </div>
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
@@ -47,8 +47,8 @@ const FormTasks: React.FC<FormTasksProps> = () => {
           <TextField type={"date"} id={"dataentrega"} />
         </div>
         <div className="flex flex-col gap-2">
-          <Label htmlFor={"dataInicio"}>Prioridade</Label>
-          <Select options={[]} />
+          <Label htmlFor={"taskPriority"}>Prioridade</Label>
+          <Select id="taskPriority" options={[]} />
         </div>
       </div>
       <div className="w-full">

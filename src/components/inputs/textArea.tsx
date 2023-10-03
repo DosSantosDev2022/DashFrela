@@ -3,12 +3,14 @@ import React from "react";
 interface TextAreaProps {
   placeholder?: string;
   value?: string;
+  id: string;
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
   placeholder,
   value,
+  id,
   onChange,
 }) => {
   return (
@@ -17,6 +19,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       value={value}
       onChange={onChange}
       className="border p-2 rounded-md w-full"
+      id={id}
     />
   );
 };

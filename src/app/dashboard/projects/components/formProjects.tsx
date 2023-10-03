@@ -30,12 +30,16 @@ const FormProjects = ({}: FormProjectsProps) => {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <Label htmlFor={"nome"}>Descrição do Projeto</Label>
-        <TextArea placeholder="Descreva o seu projeto" value={""} />
+        <Label htmlFor={"descriptionProject"}>Descrição do Projeto</Label>
+        <TextArea
+          id="descriptionProject"
+          placeholder="Descreva o seu projeto"
+          value={""}
+        />
       </div>
       <div className="flex flex-col gap-2">
-        <Label htmlFor={"nome"}>Selecione cliente</Label>
-        <Select options={[]} />
+        <Label htmlFor={"clientName"}>Selecione cliente</Label>
+        <Select id="clientName" options={[]} />
       </div>
       <div className="flex items-center justify-between w-full">
         <div className="flex flex-col gap-2">
@@ -55,18 +59,18 @@ const FormProjects = ({}: FormProjectsProps) => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <Label htmlFor={""}>Prioridade</Label>
-          <Select options={opcoes} />
+          <Label htmlFor={"priorityProjects"}>Prioridade</Label>
+          <Select id="priorityProjects" options={opcoes} />
         </div>
       </div>
       <div className="flex items-center gap-5">
         <div className="flex flex-col gap-2 ">
-          <Label htmlFor={""}>Valor do projeto</Label>
-          <TextField type={"number"} id={"valor"} />
+          <Label htmlFor={"priceProject"}>Valor do projeto</Label>
+          <TextField type={"number"} id={"priceProject"} />
         </div>
         <div className="flex flex-col gap-2 ">
-          <Label htmlFor={""}>Forma de pagamento</Label>
-          <Select options={pagamentos} />
+          <Label htmlFor={"paymentProject"}>Forma de pagamento</Label>
+          <Select id="paymentProject" options={pagamentos} />
         </div>
       </div>
       <div className="flex items-center w-full  p-3 gap-2 mt-3">

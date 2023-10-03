@@ -1,7 +1,6 @@
 import Button from "@/components/buttons/button";
 import Label from "@/components/inputs/label";
 import Select from "@/components/inputs/select";
-import TextArea from "@/components/inputs/textArea";
 import TextField from "@/components/inputs/textField";
 
 const FormClients = () => {
@@ -10,25 +9,25 @@ const FormClients = () => {
       <form className="space-y-3">
         <div className=" grid grid-cols-12 gap-3">
           <div className="flex flex-col gap-2 col-span-6">
-            <Label htmlFor={"nome"}>Primeiro nome</Label>
+            <Label htmlFor={"name"}>Primeiro nome</Label>
             <TextField
               type={"text"}
-              id={"nome"}
+              id={"name"}
               placeholder="Digite seu nome"
             />
           </div>
           <div className="flex flex-col gap-2 col-span-6">
-            <Label htmlFor={"nome"}>Sobre nome</Label>
+            <Label htmlFor={"surname"}>Sobre nome</Label>
             <TextField
               type={"text"}
-              id={"nome"}
+              id={"surname"}
               placeholder="Digite seu sobrenome"
             />
           </div>
         </div>
         <div className="grid grid-cols-12 gap-3">
           <div className="flex flex-col gap-2 col-span-8">
-            <Label htmlFor={"nome"}>Email</Label>
+            <Label htmlFor={"email"}>Email</Label>
             <TextField
               type={"email"}
               id={"email"}
@@ -36,7 +35,7 @@ const FormClients = () => {
             />
           </div>
           <div className="flex flex-col gap-2 col-span-4">
-            <Label htmlFor={"nome"}>Telefone</Label>
+            <Label htmlFor={"phone"}>Telefone</Label>
             <TextField
               type={"phone"}
               id={"phone"}
@@ -47,21 +46,21 @@ const FormClients = () => {
 
         <div className="grid grid-cols-12 gap-3">
           <div className="flex flex-col gap-2 col-span-4">
-            <Label htmlFor={"nome"}>Selecione país</Label>
-            <Select options={[]} />
+            <Label htmlFor={"country"}>Selecione país</Label>
+            <Select id="country" options={[]} />
           </div>
           <div className="flex flex-col gap-2 col-span-4">
-            <Label htmlFor={"nome"}>Selecione estado</Label>
-            <Select options={[]} />
+            <Label htmlFor={"state"}>Selecione estado</Label>
+            <Select id="state" options={[]} />
           </div>
           <div className="flex flex-col gap-2 col-span-4">
-            <Label htmlFor={"nome"}>Selecione cidade</Label>
-            <Select options={[]} />
+            <Label htmlFor={"city"}>Selecione cidade</Label>
+            <Select id="city" options={[]} />
           </div>
         </div>
         <div className="grid grid-cols-12 gap-3">
           <div className="flex flex-col gap-2 col-span-6">
-            <Label htmlFor={"nome"}>Endereço</Label>
+            <Label htmlFor={"endereco"}>Endereço</Label>
             <TextField
               type={"text"}
               id={"endereco"}
@@ -69,7 +68,7 @@ const FormClients = () => {
             />
           </div>
           <div className="flex flex-col gap-2 col-span-6">
-            <Label htmlFor={"nome"}>CEP</Label>
+            <Label htmlFor={"cep"}>CEP</Label>
             <TextField
               type={"number"}
               id={"cep"}
