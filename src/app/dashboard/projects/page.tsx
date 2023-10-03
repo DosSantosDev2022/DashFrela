@@ -24,7 +24,7 @@ const ProjectsPage = () => {
       <CreateItems
         name={"Meus Projetos"}
         nameButton={"Criar projeto"}
-        modalContent={<ModalProjects onClose={closeModal} />}
+        modalContent={<ModalProjects />}
       />
 
       <div className="flex flex-col gap-4 items-center justify-between p-6 border">

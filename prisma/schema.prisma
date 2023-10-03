@@ -10,8 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model Account {
   id                 String  @id @default(cuid())
   userId             String
@@ -55,4 +53,40 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Project {
+  id String @id @default(cuid())
+  name String
+  description String
+  clientName String
+  priority String
+  status String
+  priceProject Decimal @db.Decimal(8,2)
+  payment String
+  startDate   DateTime 
+  endDate   DateTime
+}
+
+model Tasks {
+  id String @id @default(cuid())
+  taskName String
+  taskDescription String
+  subTasks String
+  startDate DateTime
+  endDate DateTime
+  priority String
+}
+
+model Client {
+  id String @id @default(cuid())
+  clientName String
+  clientSurName String
+  clientEmail String @unique
+  clientPhone String @unique
+  clientCountry String
+  clientState String
+  clientCity String
+  clientAddress String
+  clientCep String
 }
