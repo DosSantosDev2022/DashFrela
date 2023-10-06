@@ -4,6 +4,7 @@ interface TextAreaProps {
   placeholder?: string;
   value?: string;
   id: string;
+  name: string;
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
@@ -11,6 +12,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   placeholder,
   value,
   id,
+  name,
   onChange,
 }) => {
   return (
@@ -20,6 +22,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       onChange={onChange}
       className="border p-2 rounded-md w-full"
       id={id}
+      name={name}
     />
   );
 };

@@ -9,10 +9,17 @@ interface SelectProps {
   options: SelectOption[];
   value?: string;
   id: string;
+  name: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select: React.FC<SelectProps> = ({ options, value, id, onChange }) => {
+const Select: React.FC<SelectProps> = ({
+  options,
+  value,
+  id,
+  name,
+  onChange,
+}) => {
   return (
     <select
       value={value}

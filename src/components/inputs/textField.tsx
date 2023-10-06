@@ -2,10 +2,11 @@ import React, { ChangeEvent } from "react";
 
 interface TextFieldProps {
   type: string;
-  value?: string;
+  value: string;
   placeholder?: string;
-  id?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  id: string;
+  name: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -13,6 +14,7 @@ const TextField: React.FC<TextFieldProps> = ({
   value,
   placeholder,
   id,
+  name,
   onChange,
 }) => {
   return (
@@ -24,6 +26,7 @@ const TextField: React.FC<TextFieldProps> = ({
         className=" border border-MyColor04 text-MyColor02 p-2 rounded-lg w-full"
         id={id}
         onChange={onChange}
+        name={name}
       />
     </>
   );
