@@ -1,8 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+// Importe os módulos necessários
 import { NextApiRequest, NextApiResponse } from "next";
+import { PrismaClient } from "@prisma/client";
 
+// Crie uma instância do PrismaClient
 const prisma = new PrismaClient();
 
+// Exporte o método handler para o método POST
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

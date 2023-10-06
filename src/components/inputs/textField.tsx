@@ -6,7 +6,7 @@ interface TextFieldProps {
   placeholder?: string;
   id: string;
   name: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
