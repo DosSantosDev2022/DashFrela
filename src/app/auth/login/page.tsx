@@ -1,11 +1,11 @@
 "use client";
 import { FaGoogle } from "react-icons/fa6";
 import Button from "@/components/buttons/button";
-import Input from "@/app/login/components/input";
+import Input from "@/app/auth/login/components/input";
 import LogoDark from "@/components/logo/logo";
 import React from "react";
 import Link from "next/link";
-import CheckInput from "@/app/login/components/checkBox";
+import CheckInput from "@/app/auth/login/components/checkBox";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 

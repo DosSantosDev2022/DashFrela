@@ -1,16 +1,14 @@
-import CreateItens from "../components/createItens";
+import Button from "@/components/buttons/button";
 
-import ModalClient from "./components/modalClient";
 
 const ClientsPage = () => {
   return (
     <>
       <div className="flex flex-col gap-3">
-        <CreateItens
-          name={"Meus clientes"}
-          nameButton={"Cadastrar cliente"}
-          modalContent={<ModalClient />}
-        />
+          <div className="flex items-center justify-between p-6 border">
+            <p className="text-MyColor02 font-medium text-lg">Clientes cadastrados</p>
+            <Button >Cadastrar cliente</Button>
+          </div>
       </div>
     </>
   );
