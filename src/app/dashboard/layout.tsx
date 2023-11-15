@@ -3,6 +3,7 @@ import HeaderDash from "./components/Header/header";
 import SideBar from "./components/SideBar/sidebar";
 import { NextAuthProvider } from "@/providers/auth";
 
+
 export default function DashboardLayout({
   children, // será uma página ou um layout aninhado
 }: {
@@ -10,16 +11,15 @@ export default function DashboardLayout({
 }) {
   return (
     <NextAuthProvider>
-      <section className="grid grid-cols-12 p-2 w-screen h-screen ">
-        <div className="col-span-2 top-0 left-0 h-full">
-          <SideBar />
+      <section className="flex flex-row w-screen h-screen overflow-hidden">
+        <SideBar/>
+        <div className="flex-1 flex flex-col">
+          <HeaderDash/>
+          <div className="flex-1 p-4 min-h-0 overflow-auto">
+            {children}
+          </div>
         </div>
-        <div className="col-span-10 relative">
-          <HeaderDash />
-          <main className="bg-slate-100 p-4 absolute top-16 left-0 right-0 bottom-0 overflow-y-auto scrollbar-thin scrollbar-thumb-MyColor01 scrollbar-rounded-xl">
-            <div className="p-2 rounded-lg ">{children}</div>
-          </main>
-        </div>
+       
       </section>
     </NextAuthProvider>
   );

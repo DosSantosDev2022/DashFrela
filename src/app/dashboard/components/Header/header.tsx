@@ -6,7 +6,11 @@ import SearchInput from "./inputSearch";
 const HeaderDash = () => {
   return (
     <>
-      <header className="bg-white fixed w-[calc(100%-240px)] h-16 px-9 py-3  border flex items-center justify-between border-b shadow-xl ">
+      <header className="bg-white  w-full
+      h-16 px-9 py-3  border flex items-center 
+      justify-between border-b shadow-xl "
+      
+      >
         <SearchInput />
         <UserProfile />
         {/* imagem do usuário logado */}
