@@ -2,7 +2,7 @@ import { FaClipboardCheck } from "react-icons/fa6";
 
 import Button from "@/components/buttons/button";
 
-const TasksPage = () => {
+export default function TasksPage() {
   return (
     <>
       <div className="flex flex-col gap-3">
@@ -17,5 +17,3 @@ const TasksPage = () => {
     </>
   );
 };
-
-export default TasksPage;

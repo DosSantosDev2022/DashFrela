@@ -1,7 +1,7 @@
 import Button from "@/components/buttons/button";
 
 
-const ClientsPage = () => {
+export  default function ClientsPage() {
   return (
     <>
       <div className="flex flex-col gap-3">
@@ -14,4 +14,4 @@ const ClientsPage = () => {
   );
 };
 
-export default ClientsPage;
+

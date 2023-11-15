@@ -8,7 +8,7 @@ const HeaderDash = () => {
     <>
       <header className="bg-white  w-full
       h-16 px-9 py-3  border flex items-center 
-      justify-between border-b shadow-xl "
+      justify-between border-b shadow-sm "
       
       >
         <SearchInput />
