@@ -9,32 +9,32 @@ const headList = [
   {nome: "Progresso"}
 ]
 const projectDetails = [
-  {Projects :
-    {
-    id: 1,
-    nome:"Nome projeto",
-    hora: "12hs",
-    Prioridade: <PriorityTag namePriority="Prioridade Alta"/>,
-    Cliente: "Nome cliente",
-    Progresso: "50"
-  },
-},
-{Projects :
-  {
-  id: 2,
-  nome:"Nome projeto",
-  hora: "12hs",
-  Prioridade: <PriorityTag namePriority="Prioridade Alta"/>,
-  Cliente: "Nome cliente",
-  Progresso: "75"
-},
-}
+      {Projects :
+        {
+        id: 1,
+        nome:"Nome projeto",
+        hora: "12hs",
+        Prioridade: <PriorityTag namePriority="Prioridade Alta"/>,
+        Cliente: "Nome cliente",
+        Progresso: "50"
+      },
+    },
+    {Projects :
+      {
+      id: 2,
+      nome:"Nome projeto",
+      hora: "12hs",
+      Prioridade: <PriorityTag namePriority="Prioridade média"/>,
+      Cliente: "Nome cliente",
+      Progresso: "75"
+    },
+    }
 ]
 
 export function ProjectListResum() {
   return (
     <>
-       <table className="p-4 bg-slate-200 rounded-md  flex flex-col gap-2 shadow-md">
+       <table className="p-4 bg-slate-50 rounded-md  flex flex-col gap-2 shadow-md">
         {/* aqui devo colocar a lista de resumo de projetos */}
         <thead className="border bg-white p-4 rounded-sm" >
           <tr className="flex justify-between">

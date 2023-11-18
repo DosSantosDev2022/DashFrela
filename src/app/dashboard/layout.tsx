@@ -11,11 +11,11 @@ export default function DashboardLayout({
 }) {
   return (
     <NextAuthProvider>
-      <section className="flex flex-row w-screen h-screen overflow-hidden">
+      <section className="flex flex-row w-screen h-screen overflow-hidden ">
         <SideBar/>
         <div className="flex-1 flex flex-col">
           <HeaderDash/>
-          <div className="flex-1 p-4 min-h-0 overflow-auto">
+          <div className="flex-1 p-4 min-h-0 overflow-auto scrollbar scrollbar-thumb-MyColor01">
             {children}
           </div>
         </div>

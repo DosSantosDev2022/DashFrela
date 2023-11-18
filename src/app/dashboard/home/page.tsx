@@ -48,8 +48,8 @@ const PageDashboard = () => {
         <h3 className="font-semibold text-MyColor01 ">Projetos em andamento</h3>
       </div>
         <ProjectListResum/>{/* Componente para renderizar um resumo  de projetos */}
-      <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
-          <Link href={"/dashboard/projects"}>Ver todos os projetos</Link>
+       <div className=" flex items-end justify-center bg-white w-full p-2 text-center">
+          <Link className="bg-MyColor01 p-2 rounded-md text-white hover:bg-MyColor02 transition-all" href={"/dashboard/projects"}>Ver todos os projetos</Link>
         </div>
       <div className="flex items-start justify-around gap-5">
         <PerformanceGraphic /> {/* Componente do gráfico de performance */}
