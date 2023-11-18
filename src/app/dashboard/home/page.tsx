@@ -8,6 +8,7 @@ import CardsDash from "./components/cards";
 import Link from "next/link";
 import PerformanceGraphic from "./components/graphic";
 import Teams from "./components/teams";
+import { ProjectListResum } from "./components/projectListResum";
 
 
 const PageDashboard = () => {
@@ -19,39 +20,37 @@ const PageDashboard = () => {
           icon={<FaRegWindowRestore />}
           content={"50"}
           text={"8"}
-          iconColor="green"
+          iconColor="#624BFF"
         />
         <CardsDash
           name={"Tarefas Ativas"}
           icon={<FaClipboardCheck />}
           content={"50"}
           text={"5"}
-          iconColor="blue"
+          iconColor="#0DCAF0"
         />
         <CardsDash
           name={"Clientes"}
           icon={<FaUserLarge />}
           content={"50"}
           text={"3"}
-          iconColor="gray"
+          iconColor="#DC3545"
         />
         <CardsDash
           name={"Produtividade"}
           icon={<FaLocationCrosshairs />}
           content={"50%"}
           text={"4%"}
-          iconColor="red"
+          iconColor="#28A745"
         />
       </div>
       <div className="bg-white rounded-md p-6 shadow-lg  flex justify-between items-center">
         <h3 className="font-semibold text-MyColor01 ">Projetos em andamento</h3>
       </div>
-      <div className="p-4 bg-slate-200 rounded-md  flex flex-col gap-2 shadow-md">
-        {/* aqui devo colocar a lista de resumo de projetos */}
-        <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
+        <ProjectListResum/>{/* Componente para renderizar um resumo  de projetos */}
+      <div className="border-t border-MyColor01 bg-white w-full p-2 text-center">
           <Link href={"/dashboard/projects"}>Ver todos os projetos</Link>
         </div>
-      </div>
       <div className="flex items-start justify-around gap-5">
         <PerformanceGraphic /> {/* Componente do gráfico de performance */}
         <Teams /> {/* Componente com resumo dos membros do time */}
