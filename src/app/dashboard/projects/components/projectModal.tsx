@@ -20,12 +20,12 @@ export function ProjectModal() {
   ]
   
   const [selectedPriority, setSelectedPriority] = useState<string>("")
+  const [projectName, setProjectName] = useState<string>("")
+  const [projectedClient, setProjectedClient] = useState<string>("")
+  const [projectDescription,setProjectDescription] = useState<string>("")
+  const [startDate, setStartDate] = useState<string>("")
+  const [endDate, setEndDate] = useState<string>("")
 
-  const handlePriorityChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedPriority(event.target.value);
-  };
 
   return (
     <>
@@ -44,9 +44,9 @@ export function ProjectModal() {
                   </div>
                   
                   <Dialog.Close>
-                      <Button variant='danger' className='text-2xl'>
-                      <IoCloseSharp />
-                      </Button>
+                      <button   className='text-3xl bg-MyColor01 text-white border-none rounded-md hover:bg-MyColor02 hover:scale-105 transition-all'>
+                          <IoCloseSharp />
+                      </button>
                   </Dialog.Close>
                 </header>
                 <main>
@@ -57,18 +57,20 @@ export function ProjectModal() {
                       <TextField 
                         name='projectname' 
                         type='text' 
-                        value='' 
+                        value={projectName} 
                         id='projectname' 
                         placeholder='Digite o nome do projeto'
+                        onChange={(e) => setProjectName(e.target.value)}
                       />
                     </div>
                     <div className='flex flex-col gap-2'>
                     <Label  htmlFor='description'>Descrição do projeto</Label>
                       <TextArea 
                         id='description' 
-                        value='' 
+                        value={projectDescription} 
                         placeholder='Descreva o seu projeto' 
                         name='description'
+                        onChange={(e) => setProjectDescription(e.target.value)}
                         />
                     </div>
                     <div className='flex flex-col gap-1'>
@@ -76,8 +78,9 @@ export function ProjectModal() {
                       <Select 
                         id='' 
                         name=''  
-                        value='' 
+                        value={projectedClient} 
                         options={priorityList}
+                        onChange={(e) => setProjectedClient(e.target.value)}
                       />
                       <div className='flex gap-5 items-center justify-center mt-5 '>
                         <div className='flex flex-col gap-1'>
@@ -85,8 +88,9 @@ export function ProjectModal() {
                           <TextField 
                             name='dataInicio'
                             type='date' 
-                            value='' 
+                            value={startDate} 
                             id='projectdate'
+                            onChange={(e) => setStartDate (e.target.value)}
                           />
                         </div>
                         <div className='flex flex-col gap-1'>
@@ -94,8 +98,9 @@ export function ProjectModal() {
                           <TextField 
                             name='dataEntrega' 
                             type='date' 
-                            value='' 
+                            value={endDate} 
                             id='projectdate'
+                            onChange={(e) => setEndDate(e.target.value)}
                           />
                         </div>
                         <div className='flex flex-col gap-1'>
@@ -103,7 +108,7 @@ export function ProjectModal() {
                           <Select
                             id='selectpriority'  
                             name='selectpriority' 
-                            onChange={handlePriorityChange} 
+                            onChange={(e) => setSelectedPriority(e.target.value)} 
                             options={ priorityList} 
                             value={selectedPriority} 
                           />
@@ -111,7 +116,7 @@ export function ProjectModal() {
                       </div>
                     </div>
                     <div className='w-full flex items-center justify-end'>
-                      <Button variant='primary' className='w-32'>Salvar</Button>
+                      <Button variant='primary' className='w-32' >Salvar</Button>
                     </div>
                   </form>
                 </main>
