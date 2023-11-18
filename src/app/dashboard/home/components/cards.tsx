@@ -5,14 +5,15 @@ interface CardsDashProps {
   icon: ReactNode;
   content: string;
   text: string;
+  iconColor: string
 }
 
-const CardsDash = ({ name, icon, content, text }: CardsDashProps) => {
+const CardsDash = ({ name, icon, content, text, iconColor }: CardsDashProps) => {
   return (
     <div className="bg-white rounded-lg flex- flex-col w-64 h-40 p-6 gap-6 shadow-md">
       <div className="flex justify-between items-center ">
         <p className="text-lg font-semibold text-MyColor01">{name}</p>
-        <i className="p-2 bg-purple-900 text-white rounded-sm">{icon}</i>
+        <i className={`p-2 rounded-lg`} style={{backgroundColor: iconColor, color:"white"}} >{icon}</i>
       </div>
       <div className="mt-1">
         <p className="font-bold text-4xl text-MyColor02">{content}</p>

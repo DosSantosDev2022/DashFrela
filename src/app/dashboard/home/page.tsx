@@ -19,24 +19,28 @@ const PageDashboard = () => {
           icon={<FaRegWindowRestore />}
           content={"50"}
           text={"8"}
+          iconColor="green"
         />
         <CardsDash
           name={"Tarefas Ativas"}
           icon={<FaClipboardCheck />}
           content={"50"}
           text={"5"}
+          iconColor="blue"
         />
         <CardsDash
           name={"Clientes"}
           icon={<FaUserLarge />}
           content={"50"}
           text={"3"}
+          iconColor="gray"
         />
         <CardsDash
           name={"Produtividade"}
           icon={<FaLocationCrosshairs />}
           content={"50%"}
           text={"4%"}
+          iconColor="red"
         />
       </div>
       <div className="bg-white rounded-md p-6 shadow-lg  flex justify-between items-center">
