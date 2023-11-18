@@ -1,19 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 
 const UserProfile = () => {
-  const { data } = useSession(); /* Obtém os dados da sessão do usuário */
-  const router = useRouter(); 
+  const { status, data } = useSession(); /* Obtém os dados da sessão do usuário */
+   
   const [isMenuUserOpen, setIsMenuUserOpen] = useState(false) /* contrala o estado do menu dropdown para deslogar da seção */
 
   const handleLogout = async () => {
     await signOut(); // Faz logout
-    console.log("Redirecionando para a página de login");
-    router.push("/login"); // Redireciona para a página inicial (home)
+    
+    window.location.href = "/login"; // Redireciona para a página inicial (home)
   };
 
   const toggleMenu = () => {
