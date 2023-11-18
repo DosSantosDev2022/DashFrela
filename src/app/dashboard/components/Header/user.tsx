@@ -3,34 +3,49 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
+import { useState } from "react";
 
 const UserProfile = () => {
-  const { data } = useSession();
-  const router = useRouter(); // Obtém o objeto de roteamento
+  const { data } = useSession(); /* Obtém os dados da sessão do usuário */
+  const router = useRouter(); 
+  const [isMenuUserOpen, setIsMenuUserOpen] = useState(false) /* contrala o estado do menu dropdown para deslogar da seção */
+
   const handleLogout = async () => {
     await signOut(); // Faz logout
     console.log("Redirecionando para a página de login");
-
     router.push("/login"); // Redireciona para a página inicial (home)
   };
 
+  const toggleMenu = () => {
+    setIsMenuUserOpen((prev) => !prev)
+  }
+
+  const closeMenu = () => {
+    setIsMenuUserOpen(false)
+  }
+
   return (
     <>
-      <div className="flex items-center gap-3 ">
+      <div className="relative  inline-block ">
         <Image
-          className="rounded-full"
+          className="rounded-full cursor-pointer"
           width={50}
           height={50}
           src={data?.user?.image || ""}
           alt={data?.user?.name || "Nome do usuário logado"}
+          onClick={toggleMenu}
         />
 
-        <button
-          className="text-MyColor03 cursor-pointer p-2 rounded-md hover:bg-MyColor01 hover:text-white transition-all"
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
+        {isMenuUserOpen && (
+          <div className="absolute right-0 mt-2 bg-white border rounded-md shadow-md ">
+              <button
+              className="block w-full font-medium text-left px-4 py-2 hover:bg-gray-100 transition-all"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
