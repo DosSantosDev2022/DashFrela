@@ -12,8 +12,8 @@ export default function ConfigurationPage() {
       <div className="flex items-center justify-between gap-3 p-4">
         <p className="text-lg font-semibold text-MyColor01">Avatar</p>
         <UserProfile />
-        <Button type="button">Alterar</Button>
-        <Button variant="danger">Remover</Button>
+        <Button variant="outlined">Alterar</Button>
+        <Button variant="outlined">Remover</Button>
       </div>
       <div className="flex items-center justify-between gap-3 p-4">
           <p className="text-MyColor02 font-medium text-base mb-2">Foto de capa</p>

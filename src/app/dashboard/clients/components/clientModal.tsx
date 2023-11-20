@@ -15,8 +15,9 @@ export function ClientModal() {
  
 
   const estados = useStates() 
+  
   const [selectedState, setSelectedState] = useState("")
-  const cidades= useCitys({ UF: selectedState})
+  const { city, loading } = useCitys({ UF: selectedState });
   const [clientName, setClientName] = useState<string>("")
   const [emailClient, setEmailClient] = useState<string>("")
 
@@ -33,7 +34,7 @@ export function ClientModal() {
           <Dialog.Trigger className='bg-MyColor01 text-white p-2 rounded-md hover:bg-MyColor02' >Cadastrar cliente</Dialog.Trigger>
             <Dialog.Portal>
             <Dialog.Overlay className='fixed inset-0 bg-black/50'/>
-              <Dialog.Content className='fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md shadow-md bg-white p-8'>
+              <Dialog.Content className='fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md shadow-md bg-white p-8 w-[804px] '>
                 <header className='flex  items-center justify-between  mb-3'>
                   <div className='flex flex-col items-start'>
                     <h2 className='text-MyColor01 font-bold text-lg'>Cadastrar novo cliente</h2>
@@ -73,14 +74,17 @@ export function ClientModal() {
                     </div>
                     <div className='flex flex-col gap-1'>
                     <Label  htmlFor='selectproject'>Vincular projeto do cliente</Label>
-                    
-                      <div className='flex gap-5 items-center justify-center mt-5 '>
-                        <div className='flex flex-col gap-2'>
+                       <SelectInput options={estados} placeholder='e' />
+                      <div className='flex gap-5 items-center justify-center mt-5 w-full '>
+                        <div className='flex flex-col gap-2 w-full'>
                             <Label  htmlFor='name'>Cidade</Label>
-                              <SelectInput placeholder='' options={cidades} />
-                              
+                            {loading ? (
+                              <p className='text-xs font-normal text-MyColor01'>Buscando cidades...</p>
+                            ): (
+                                <SelectInput placeholder='' options={city} />
+                            )}
                          </div>
-                         <div className='flex flex-col gap-2'>
+                         <div className='flex flex-col gap-2 w-full'>
                             <Label  htmlFor='name'>Estado</Label>
                             <SelectInput 
                               placeholder='' 

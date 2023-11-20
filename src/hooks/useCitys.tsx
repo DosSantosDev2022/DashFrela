@@ -17,9 +17,10 @@ interface cityProps {
 
 export const useCitys = ({UF} : cityProps) => {
     const [city, setCity] = useState<SelectOption[]>([])
-    
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+      setLoading(true)
       fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${UF}`)
       .then((response) =>  response.json())
       .then((data : iCidade[]) => {
@@ -31,9 +32,12 @@ export const useCitys = ({UF} : cityProps) => {
         
       })
       .catch((error) => console.error("Erro ao buscar estados", error))
+      .finally(() => {
+        setLoading(false)
+      })
     }, [UF])
     
     return (
-      city
+      { city, loading}
     )
 }
