@@ -1,6 +1,6 @@
 import Button from '@/components/buttons/button';
 import Label from '@/components/inputs/label';
-import Select from '@/components/inputs/select';
+import SelectInput from '@/components/inputs/selectInput';
 import TextArea from '@/components/inputs/textArea';
 import TextField from '@/components/inputs/textField';
 import * as Dialog from '@radix-ui/react-dialog';
@@ -13,15 +13,13 @@ import { IoCloseSharp } from "react-icons/io5";
 export function TasksModal() {
 
   const priorityList = [
-    {label: "Selecione", value: ""},
-    {label: "Prioridade alta", value: "Prioridade alta"},
-    {label: "Prioridade média",value: "Prioridade média" },
-    {label: "Prioridade baixa",value: "Prioridade baixa"  }
-  ]
+    { value: 'Prioridade alta', children: 'Prioridade alta' },
+    { value: 'Prioridade média', children: 'Prioridade média' },
+    { value: 'Prioridade baixa', children: 'Prioridade baixa' },
+  ];
   
-  const [selectedPriority, setSelectedPriority] = useState<string>("")
+ 
   const [projectName, setProjectName] = useState<string>("")
-  const [projectedClient, setProjectedClient] = useState<string>("")
   const [projectDescription,setProjectDescription] = useState<string>("")
   const [startDate, setStartDate] = useState<string>("")
   const [endDate, setEndDate] = useState<string>("")
@@ -75,13 +73,7 @@ export function TasksModal() {
                     </div>
                     <div className='flex flex-col gap-1'>
                     <Label  htmlFor='selectproject'>Selecione o projeto</Label>
-                      <Select 
-                        id='' 
-                        name=''  
-                        value={projectedClient} 
-                        options={priorityList}
-                        onChange={(e) => setProjectedClient(e.target.value)}
-                      />
+                    <SelectInput   options={priorityList} placeholder=''  />
                       <div className='flex gap-5 items-center justify-center mt-5 '>
                         <div className='flex flex-col gap-1'>
                           <Label  htmlFor='dataInicio'>Data Início</Label>
@@ -105,13 +97,7 @@ export function TasksModal() {
                         </div>
                         <div className='flex flex-col gap-1'>
                           <Label  htmlFor='selectproject'>Selecionar prioridade</Label>
-                          <Select
-                            id='selectpriority'  
-                            name='selectpriority' 
-                            onChange={(e) => setSelectedPriority(e.target.value)} 
-                            options={ priorityList} 
-                            value={selectedPriority} 
-                          />
+                          <SelectInput   options={priorityList} placeholder=''  />
                         </div>
                       </div>
                     </div>

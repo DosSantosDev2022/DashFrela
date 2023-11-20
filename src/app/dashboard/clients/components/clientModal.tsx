@@ -1,7 +1,9 @@
 import Button from '@/components/buttons/button';
 import Label from '@/components/inputs/label';
-import Select from '@/components/inputs/select';
+import SelectInput from '@/components/inputs/selectInput';
 import TextField from '@/components/inputs/textField';
+import { useCitys } from '@/hooks/useCitys';
+import { useStates } from '@/hooks/useStates';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
@@ -10,20 +12,17 @@ import { IoCloseSharp } from "react-icons/io5";
 
 
 export function ClientModal() {
+ 
 
-  const priorityList = [
-    {label: "Selecione", value: ""},
-    {label: "Prioridade alta", value: "Prioridade alta"},
-    {label: "Prioridade média",value: "Prioridade média" },
-    {label: "Prioridade baixa",value: "Prioridade baixa"  }
-  ]
-  
-  const [selectedPriority, setSelectedPriority] = useState<string>("")
+  const estados = useStates() 
+  const [selectedState, setSelectedState] = useState("")
+  const cidades= useCitys({ UF: selectedState})
   const [clientName, setClientName] = useState<string>("")
-  const [emailClient, setEmailClient,] = useState<string>("")
-  const [projectedClient, setProjectedClient] = useState<string>("")
+  const [emailClient, setEmailClient] = useState<string>("")
 
-
+  const handlerStateChange = (state : string) => {
+      setSelectedState(state)
+  }
 
   return (
     <>
@@ -74,47 +73,21 @@ export function ClientModal() {
                     </div>
                     <div className='flex flex-col gap-1'>
                     <Label  htmlFor='selectproject'>Vincular projeto do cliente</Label>
-                      <Select 
-                        id='' 
-                        name=''  
-                        value={projectedClient} 
-                        options={priorityList}
-                        onChange={(e) => setProjectedClient(e.target.value)}
-                      />
+                    
                       <div className='flex gap-5 items-center justify-center mt-5 '>
                         <div className='flex flex-col gap-2'>
                             <Label  htmlFor='name'>Cidade</Label>
-                            <TextField 
-                              name='citycliente' 
-                              type='' 
-                              value={emailClient} 
-                              id='emailcliente' 
-                              placeholder='email@cliente.com'
-                              onChange={(e) => setEmailClient(e.target.value)}
-                            />
+                              <SelectInput placeholder='' options={cidades} />
+                              
                          </div>
                          <div className='flex flex-col gap-2'>
                             <Label  htmlFor='name'>Estado</Label>
-                            <TextField 
-                              name='citycliente' 
-                              type='' 
-                              value={emailClient} 
-                              id='emailcliente' 
-                              placeholder='email@cliente.com'
-                              onChange={(e) => setEmailClient(e.target.value)}
+                            <SelectInput 
+                              placeholder='' 
+                              options={estados} 
+                              onChange={(e) => handlerStateChange(e)}
                             />
                          </div>
-                        
-                        <div className='flex flex-col gap-1'>
-                          <Label  htmlFor='selectproject'>Selecionar prioridade</Label>
-                          <Select
-                            id='selectpriority'  
-                            name='selectpriority' 
-                            onChange={(e) => setSelectedPriority(e.target.value)} 
-                            options={ priorityList} 
-                            value={selectedPriority} 
-                          />
-                        </div>
                       </div>
                     </div>
                     <div className='w-full flex items-center justify-end'>
