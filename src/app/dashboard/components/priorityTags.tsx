@@ -31,9 +31,9 @@ const PriorityTag = ({ namePriority }: PrioridadeTasksProps) => {
   const corClasse = getClassBasedOnPriority(namePriority);
 
   return (
-    <p className={`p-1 text-xs font-normal text-white rounded-md ${corClasse}`}>
+    <div className={`p-1 text-xs font-normal text-white rounded-md w-[120px] h-7 flex items-center justify-center ${corClasse}`}>
       {namePriority}
-    </p>
+    </div>
   );
 };
 

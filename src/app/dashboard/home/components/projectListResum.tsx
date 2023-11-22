@@ -1,5 +1,8 @@
+import Button from "@/components/buttons/button";
 import PriorityTag from "../../components/priorityTags";
 import ProgressBar from "./progressBars";
+import { RxDashboard } from "react-icons/rx";
+
 
 const headList = [
   {nome: "Nome do projeto"},
@@ -54,6 +57,11 @@ export function ProjectListResum() {
               <td className="w-full flex items-center justify-start">{item.Projects.Cliente || ""}</td>
               <td className="w-full flex items-center justify-start">
                 <ProgressBar progress={item.Projects.Progresso}/>
+              </td>
+              <td className="flex items-center justify-start">
+                <Button className="text-lg">
+                  <RxDashboard />
+                </Button>
               </td>
             </tr>
            ))}

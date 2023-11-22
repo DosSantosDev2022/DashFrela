@@ -3,6 +3,11 @@
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
+import { LuLogOut } from "react-icons/lu";
+import { FaRegUser } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
+import { TiContacts } from "react-icons/ti";
+import Link from "next/link";
 
 const UserProfile = () => {
   const { status, data } = useSession(); /* Obtém os dados da sessão do usuário */
@@ -22,6 +27,12 @@ const UserProfile = () => {
   const closeMenu = () => {
     setIsMenuUserOpen(false)
   }
+  
+  const dropdownlinks = [
+    {nome :  " Meu perfil", url: "/", icon : <FaRegUser />},
+    {nome : "Meus contatos", url: "", icon : <TiContacts />},
+    {nome : "Configurações", url: "/dashboard/configs", icon: <FaGear />},
+  ]
 
   return (
     <>
@@ -36,11 +47,23 @@ const UserProfile = () => {
         />
 
         {isMenuUserOpen && (
-          <div className="absolute right-0 mt-2 bg-white border rounded-md shadow-md ">
+          <div className="absolute right-0 mt-3 flex w-60 flex-col  bg-white border  rounded-md shadow-md ">
+            <ul className="flex flex-col gap-5 border-b px-6 py-7 ">
+              {dropdownlinks.map((link) => (
+                  <li key={link.nome}>
+                    <Link href={link.url} className="flex items-center gap-3 text-sm lg:text-base font-medium duration-300 ease-in-out hover:text-MyColor03">
+                      {link.icon}
+                      {link.nome}
+                    </Link>
+                  </li>
+              ))}
+             
+            </ul>
               <button
-              className="block w-full font-medium text-left px-4 py-2 hover:bg-gray-100 transition-all"
+              className="flex items-center gap-3 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-MyColor03 lg:text-base"
               onClick={handleLogout}
-            >
+            > 
+              <LuLogOut />
               Logout
             </button>
           </div>

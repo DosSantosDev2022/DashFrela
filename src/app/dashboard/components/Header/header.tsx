@@ -2,6 +2,7 @@ import React from "react";
 
 import UserProfile from "./user";
 import SearchInput from "./inputSearch";
+import { NotificationsIcon } from "./notifications";
 
 const HeaderDash = () => {
   return (
@@ -12,7 +13,11 @@ const HeaderDash = () => {
       
       >
         <SearchInput />
-        <UserProfile />
+        <div className="flex items-center justify-center gap-5">
+          <NotificationsIcon/>
+          <UserProfile />
+        </div>
+        
         {/* imagem do usuário logado */}
       </header>
     </>

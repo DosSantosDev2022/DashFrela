@@ -1,20 +1,15 @@
+'use client'
+
 import Button from '@/components/buttons/button';
 import Label from '@/components/inputs/label';
-import Select from '@/components/inputs/select';
 import SelectInput from '@/components/inputs/selectInput';
-import  SelectDemo  from '@/components/inputs/selectInput';
 import TextArea from '@/components/inputs/textArea';
 import TextField from '@/components/inputs/textField';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 
-
-
-
 export function ProjectModal() {
-
-
 
   const priorityList = [
     { value: 'Prioridade alta', children: 'Prioridade alta' },
