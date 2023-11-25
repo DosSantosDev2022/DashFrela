@@ -1,27 +1,37 @@
+'use client'
+
 import React from 'react'
+import * as Progress from '@radix-ui/react-progress'
 
 interface ProgressBarProps {
-  progress: string
+  progress: number
 }
 
 const ProgressBar = ({ progress }: ProgressBarProps) => {
-  const parsedProgress = parseInt(progress, 10)
+  const [localprogress, setLocalProgress] = React.useState(progress)
 
-  const progressWidth = {
-    width: `${parsedProgress}%`,
-  }
+  React.useEffect(() => {
+    const timer = setTimeout(() => setLocalProgress(progress), 500)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-    <div className="w-full  bg-gray-200 rounded-full h-3.5 mb-4 p-2 dark:bg-gray-700 relative">
-      <div
-        className={` bg-blue-600 h-3.5 rounded-full dark:bg-blue-500 absolute -top-0 right-0 p-2`}
-        style={progressWidth}
+    <Progress.Root
+      className="relative overflow-hidden bg-MyColor03 rounded-full w-full h-[20px]"
+      style={{
+        transform: 'translateZ(0)',
+      }}
+      value={localprogress}
+    >
+      <Progress.Indicator
+        className="bg-MyColor01 w-full h-full relative transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+        style={{ transform: `translateX(${100 - localprogress}%)` }}
       >
-        <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center text-white text-xs font-bold">
-          {parsedProgress}%
-        </div>
-      </div>
-    </div>
+        <span className="absolute top-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 text-white text-sm font-semibold">
+          {`${localprogress}%`}
+        </span>
+      </Progress.Indicator>
+    </Progress.Root>
   )
 }
 

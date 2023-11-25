@@ -18,7 +18,7 @@ const projectDetails = [
       hora: '12hs',
       Prioridade: <PriorityTag namePriority="Prioridade Alta" />,
       Cliente: 'Nome cliente',
-      Progresso: '50',
+      Progresso: 65,
     },
   },
   {
@@ -28,7 +28,7 @@ const projectDetails = [
       hora: '12hs',
       Prioridade: <PriorityTag namePriority="Prioridade média" />,
       Cliente: 'Nome cliente',
-      Progresso: '75',
+      Progresso: 45,
     },
   },
 ]
