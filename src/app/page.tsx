@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import CardText from "@/components/main/cardText";
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
+import Link from 'next/link'
+import Image from 'next/image'
+import CardText from '@/components/main/cardText'
+import Footer from '@/components/footer/footer'
+import Header from '@/components/header/header'
 
 export default function Home() {
   return (
@@ -25,13 +25,13 @@ export default function Home() {
           <div className="flex gap-4 items-center">
             <Link
               className="w-20 h-10 bg-MyColor01  text-white flex items-center justify-center"
-              href={"/login"}
+              href={'/login'}
             >
               Login
             </Link>
             <Link
               className="w-32 h-10 bg-MyColor03  text-MyColor01 flex items-center justify-center"
-              href={"/cadastro"}
+              href={'/cadastro'}
             >
               Cadastro
             </Link>
@@ -59,32 +59,32 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-16 p-2">
           <CardText
-            titulo={"Intuitivo e poderoso"}
+            titulo={'Intuitivo e poderoso'}
             paragrafo={
-              "Com uma interface de usuário intuitiva e funcionalidades poderosas, você terá o controle total sobre seus projetos e tarefas. Desde o acompanhamento do progresso até o compartilhamento de informações essenciais, você nunca esteve tão no comando."
+              'Com uma interface de usuário intuitiva e funcionalidades poderosas, você terá o controle total sobre seus projetos e tarefas. Desde o acompanhamento do progresso até o compartilhamento de informações essenciais, você nunca esteve tão no comando.'
             }
           />
           <CardText
-            titulo={"Colaboração simplificada"}
+            titulo={'Colaboração simplificada'}
             paragrafo={
-              "Trabalhar com outros profissionais é fácil e eficiente com nossas ferramentas de colaboração integradas. Compartilhe atualizações, discuta ideias e mantenha todos os envolvidos na mesma página."
+              'Trabalhar com outros profissionais é fácil e eficiente com nossas ferramentas de colaboração integradas. Compartilhe atualizações, discuta ideias e mantenha todos os envolvidos na mesma página.'
             }
           />
           <CardText
-            titulo={"Visão geral e abrangente"}
+            titulo={'Visão geral e abrangente'}
             paragrafo={
-              "Visualize seus projetos em um piscar de olhos. Com gráficos e relatórios personalizados, você terá insights valiosos sobre a produtividade, o cronograma e o desempenho geral."
+              'Visualize seus projetos em um piscar de olhos. Com gráficos e relatórios personalizados, você terá insights valiosos sobre a produtividade, o cronograma e o desempenho geral.'
             }
           />
           <CardText
-            titulo={"Segurança e privacidade"}
+            titulo={'Segurança e privacidade'}
             paragrafo={
-              " Entendemos a importância da segurança dos dados. Nossa plataforma oferece medidas robustas de segurança para garantir que suas informações estejam protegidas a todo momento."
+              ' Entendemos a importância da segurança dos dados. Nossa plataforma oferece medidas robustas de segurança para garantir que suas informações estejam protegidas a todo momento.'
             }
           />
         </div>
       </main>
       <Footer />
     </div>
-  );
+  )
 }

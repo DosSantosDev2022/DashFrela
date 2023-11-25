@@ -1,12 +1,12 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent } from 'react'
 
 interface TextFieldProps {
-  type: string;
-  value: string;
-  placeholder?: string;
-  id: string;
-  name: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  type: string
+  value: string
+  placeholder?: string
+  id: string
+  name: string
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -29,7 +29,7 @@ const TextField: React.FC<TextFieldProps> = ({
         name={name}
       />
     </>
-  );
-};
+  )
+}
 
-export default TextField;
+export default TextField

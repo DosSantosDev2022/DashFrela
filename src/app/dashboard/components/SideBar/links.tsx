@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+import Link from 'next/link'
+import { ReactNode } from 'react'
 
 interface NavLinksPros {
-  icon: ReactNode;
-  name: string;
-  href: string;
+  icon: ReactNode
+  name: string
+  href: string
 }
 
 const NavLinks = ({ icon, name, href }: NavLinksPros) => {
@@ -13,7 +13,7 @@ const NavLinks = ({ icon, name, href }: NavLinksPros) => {
       <i>{icon}</i>
       <Link href={href}>{name}</Link>
     </li>
-  );
-};
+  )
+}
 
-export default NavLinks;
+export default NavLinks

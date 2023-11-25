@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import Button from "@/components/buttons/button";
-import Input from "@/app/auth/login/components/input";
-import LogoDark from "@/components/logo/logo";
-import React from "react";
-import Link from "next/link";
-import CheckboxInput from "@/app/auth/login/components/checkBox";
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import Button from '@/components/buttons/button'
+import Input from '@/app/(auth)/login/components/input'
+import LogoDark from '@/components/logo/logo'
+import React from 'react'
+import Link from 'next/link'
+import CheckboxInput from '@/app/(auth)/login/components/checkBox'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const CadastroPage = () => {
-  const handleLoginClick = () => signIn();
-  const { data: session } = useSession(); //
-  const router = useRouter();
+  const handleLoginClick = () => signIn()
+  const { data: session } = useSession() //
+  const router = useRouter()
   if (session?.user) {
     // Redireciona o usuário para outra página (por exemplo, Dashboard)
-    router.push("/dashboard");
-    return null; // Pode retornar algo enquanto o redirecionamento ocorre
+    router.push('/dashboard')
+    return null // Pode retornar algo enquanto o redirecionamento ocorre
   }
 
   return (
@@ -29,13 +29,13 @@ const CadastroPage = () => {
           </h4>
         </div>
         <form className="flex flex-col gap-2 mt-3">
-          <Input label="Usuário" type={"text"} />
-          <Input label="E-mail" type={"email"} />
-          <Input label="Senha" type={"password"} />
-          <Input label="Confirme a Senha" type={"password"} />
+          <Input label="Usuário" type={'text'} />
+          <Input label="E-mail" type={'email'} />
+          <Input label="Senha" type={'password'} />
+          <Input label="Confirme a Senha" type={'password'} />
           <CheckboxInput
             text={
-              "Ao criar uma conta, você concorda com os termos e condições."
+              'Ao criar uma conta, você concorda com os termos e condições.'
             }
           />
           <div className="flex gap-2">
@@ -54,22 +54,22 @@ const CadastroPage = () => {
           <div className="flex justify-around mt-2">
             <Link
               className="text-sm text-MyColor02 font-normal hover:underline"
-              href={""}
+              href={''}
             >
               Já é tenho cadastro
             </Link>
             <Link
               className="text-sm text-MyColor02 font-normal hover:underline"
-              href={""}
+              href={''}
             >
-              {" "}
+              {' '}
               Esqueceu a senha ?
             </Link>
           </div>
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CadastroPage;
+export default CadastroPage

@@ -1,16 +1,16 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 interface CardBackgroundProps {
-  children: ReactNode;
-  className: string;
+  children: ReactNode
+  className: string
 }
 
 const CardBackground = ({ children, className }: CardBackgroundProps) => {
   const cardClasses = `bg-white rounded-md p-6 shadow-lg  flex justify-between items-center ${
-    className || ""
-  }`;
+    className || ''
+  }`
 
-  return <div className={cardClasses}>{children}</div>;
-};
+  return <div className={cardClasses}>{children}</div>
+}
 
-export default CardBackground;
+export default CardBackground

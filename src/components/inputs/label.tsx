@@ -1,6 +1,6 @@
 interface LabelProps {
-  htmlFor: string;
-  children: React.ReactNode;
+  htmlFor: string
+  children: React.ReactNode
 }
 
 const Label: React.FC<LabelProps> = ({ htmlFor, children }) => {
@@ -8,7 +8,7 @@ const Label: React.FC<LabelProps> = ({ htmlFor, children }) => {
     <label htmlFor={htmlFor} className="text-base font-medium text-MyColor02">
       {children}
     </label>
-  );
-};
+  )
+}
 
-export default Label;
+export default Label

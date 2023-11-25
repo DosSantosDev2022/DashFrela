@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
 interface TextAreaProps {
-  placeholder?: string;
-  value?: string;
-  id: string;
-  name: string;
-  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  placeholder?: string
+  value?: string
+  id: string
+  name: string
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -24,7 +24,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       id={id}
       name={name}
     />
-  );
-};
+  )
+}
 
-export default TextArea;
+export default TextArea

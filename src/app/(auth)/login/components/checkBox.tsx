@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const CheckboxInput = (props: {
   text:
@@ -10,14 +10,14 @@ const CheckboxInput = (props: {
     | React.ReactPortal
     | React.PromiseLikeOfReactNode
     | null
-    | undefined;
+    | undefined
 }) => {
   return (
     <div className="text-MyColor02 flex gap-3 text-xs">
       <input type="checkbox" />
       {props.text}
     </div>
-  );
-};
+  )
+}
 
-export default CheckboxInput;
+export default CheckboxInput

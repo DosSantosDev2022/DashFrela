@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const Input = (props: { label: string; type: string }) => {
-  const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState("");
+  const [inputValue, setInputValue] = useState('')
+  const [error, setError] = useState('')
 
   const handleInputChange = (event: { target: { value: any } }) => {
-    const value = event.target.value;
-    setInputValue(value);
-    setError("");
-  };
+    const value = event.target.value
+    setInputValue(value)
+    setError('')
+  }
   const handleBlur = () => {
-    if (inputValue.trim() === "") {
-      setError("Este campo é obrigatório");
+    if (inputValue.trim() === '') {
+      setError('Este campo é obrigatório')
     }
-  };
+  }
   return (
     <div>
       <label className="text-sm text-MyColor02 font-normal">
@@ -29,7 +29,7 @@ const Input = (props: { label: string; type: string }) => {
       />
       {error && <p className="text-red-500 text-base mt-1">{error}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
