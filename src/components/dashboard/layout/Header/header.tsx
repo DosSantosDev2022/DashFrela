@@ -1,8 +1,9 @@
 import React from 'react'
 
 import UserProfile from './user'
-import SearchInput from './inputSearch'
+
 import { NotificationsIcon } from './notifications'
+import { Input } from '@/components/ui/input'
 
 const HeaderDash = () => {
   return (
@@ -12,7 +13,7 @@ const HeaderDash = () => {
       h-16 px-9 py-3  border flex items-center 
       justify-between border-b shadow-sm "
       >
-        <SearchInput />
+        <Input className="w-[20rem] " placeholder="Search..." />
         <div className="flex items-center justify-center gap-5 mr-6">
           <NotificationsIcon />
           <UserProfile />

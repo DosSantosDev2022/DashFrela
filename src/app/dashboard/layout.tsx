@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderDash from './components/Header/header'
-import SideBar from './components/SideBar/sidebar'
+import HeaderDash from '@/components/dashboard/layout/Header/header'
+import SideBar from '@/components/dashboard/layout/SideBar/sidebar'
 import { NextAuthProvider } from '@/providers/auth'
 
 export default function DashboardLayout({
