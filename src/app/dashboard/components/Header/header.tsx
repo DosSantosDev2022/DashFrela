@@ -8,12 +8,12 @@ const HeaderDash = () => {
   return (
     <>
       <header
-        className="bg-white  w-full
+        className="bg-secondary  w-full
       h-16 px-9 py-3  border flex items-center 
       justify-between border-b shadow-sm "
       >
         <SearchInput />
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-5 mr-6">
           <NotificationsIcon />
           <UserProfile />
         </div>

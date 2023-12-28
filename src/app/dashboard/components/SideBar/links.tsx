@@ -29,7 +29,7 @@ const NavLinks = () => {
         {links.map((link) => (
           <li
             key={link.nome}
-            className="text-white list-none flex items-center gap-2 p-1 cursor-pointer hover:bg-slate-100 hover:text-MyColor01 transition-all hover:scale-105 rounded-md "
+            className="text-zinc-50 list-none flex items-center gap-2 p-1 cursor-pointer hover:bg-slate-100 hover:text-zinc-900 transition-all hover:scale-105 rounded-md "
           >
             <i>{link.icon}</i>
             <Link href={link.href}>{link.nome}</Link>

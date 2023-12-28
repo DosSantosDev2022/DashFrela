@@ -1,24 +1,24 @@
-"use client";
-import { FaGoogle } from "react-icons/fa6";
-import Button from "@/components/buttons/button";
-import Input from "@/app/(auth)/login/components/input";
-import LogoDark from "@/components/logo/logo";
-import React from "react";
-import Link from "next/link";
-import CheckInput from "@/app/(auth)/login/components/checkBox";
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+'use client'
+import { FaGoogle } from 'react-icons/fa6'
+import Button from '@/components/buttons/button'
+import Input from '@/app/(auth)/login/components/input'
+import LogoDark from '@/components/logo/logo'
+import React from 'react'
+import Link from 'next/link'
+import CheckInput from '@/app/(auth)/login/components/checkBox'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const LoginPage = () => {
-  const handleLoginClick = () => signIn();
-  const { data: session } = useSession(); // Obtém o estado da sessão
-  console.log(session);
-  const router = useRouter(); // Obtém o objeto de roteamento
+  const handleLoginClick = () => signIn()
+  const { data: session } = useSession() // Obtém o estado da sessão
+  console.log(session)
+  const router = useRouter() // Obtém o objeto de roteamento
 
   if (session?.user) {
     // Redireciona o usuário para outra página (por exemplo, Dashboard)
-    router.push("/dashboard/home");
-    return null; // Pode retornar algo enquanto o redirecionamento ocorre
+    router.push('/dashboard/home')
+    return null // Pode retornar algo enquanto o redirecionamento ocorre
   }
 
   return (
@@ -32,9 +32,9 @@ const LoginPage = () => {
             </h4>
           </div>
           <form className="flex flex-col gap-5 mt-3">
-            <Input label="Usuário" type={"text"} />
-            <Input label="Senha" type={"password"} />
-            <CheckInput text={"Lembre-me"} />
+            <Input label="Usuário" type={'text'} />
+            <Input label="Senha" type={'password'} />
+            <CheckInput text={'Lembre-me'} />
             <Button className="w-full mt-2" variant="primary">
               Login
             </Button>
@@ -49,13 +49,13 @@ const LoginPage = () => {
             <div className="flex justify-around mt-2">
               <Link
                 className="text-sm text-MyColor02 font-normal hover:underline"
-                href={"/cadastro"}
+                href={'/cadastro'}
               >
                 Criar sua conta
               </Link>
               <Link
                 className="text-sm text-MyColor02 font-normal hover:underline"
-                href={""}
+                href={''}
               >
                 Esqueceu sua senha ?
               </Link>
@@ -64,7 +64,7 @@ const LoginPage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage
