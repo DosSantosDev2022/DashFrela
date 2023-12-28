@@ -1,13 +1,14 @@
 'use client'
 import { FaGoogle } from 'react-icons/fa6'
-import Button from '@/components/buttons/button'
-import Input from '@/app/(auth)/login/components/input'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import LogoDark from '@/components/logo/logo'
 import React from 'react'
 import Link from 'next/link'
 import CheckInput from '@/app/(auth)/login/components/checkBox'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { Card } from '@/components/ui/card'
 
 const LoginPage = () => {
   const handleLoginClick = () => signIn()
@@ -24,7 +25,7 @@ const LoginPage = () => {
   return (
     <>
       <div className="flex h-screen  justify-center items-center">
-        <div className="w-[364px] h-auto border rounded-xl shadow-md p-8">
+        <Card className="w-[420px] h-auto border rounded-xl  p-6">
           <div className=" flex flex-col gap-3">
             <LogoDark />
             <h4 className="text-sm font-normal text-MyColor02">
@@ -32,16 +33,16 @@ const LoginPage = () => {
             </h4>
           </div>
           <form className="flex flex-col gap-5 mt-3">
-            <Input label="Usuário" type={'text'} />
-            <Input label="Senha" type={'password'} />
+            <Input type={'email'} placeholder="Digite seu email" />
+            <Input type={'password'} placeholder="Digite sua senha" />
             <CheckInput text={'Lembre-me'} />
-            <Button className="w-full mt-2" variant="primary">
+            <Button className="w-full mt-2" variant="default">
               Login
             </Button>
             <Button
               onClick={handleLoginClick}
               className=" flex items-center justify-center gap-3 w-full h-10"
-              variant="outlined"
+              variant="outline"
             >
               Login com Google
               <FaGoogle />
@@ -61,7 +62,7 @@ const LoginPage = () => {
               </Link>
             </div>
           </form>
-        </div>
+        </Card>
       </div>
     </>
   )
