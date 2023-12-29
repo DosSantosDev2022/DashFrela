@@ -1,11 +1,10 @@
-import Image from 'next/image'
-
 import NavLinks from './links'
+import Logo from '@/components/logo/logo'
 
 const SideBar = () => {
   return (
-    <aside className="w-60 h-full  bg-primary p-6 flex flex-col  gap-6 rounded-l-lg ">
-      <Image width={150} height={50} src={'/Logo-White.svg'} alt={''} />
+    <aside className="w-60 h-full  bg-secondary p-6 flex flex-col  items-start gap-14 rounded-l-lg ">
+      <Logo />
       <NavLinks />
     </aside>
   )

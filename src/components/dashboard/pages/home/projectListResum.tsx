@@ -1,4 +1,4 @@
-import PriorityTag from '@/components/dashboard/priorityTags'
+import PriorityTag from '@/components/dashboard/globals/priorityTags'
 import { RxDashboard } from 'react-icons/rx'
 import { Progress } from '@/components/ui/progress'
 import { Button } from '@/components/ui/button'

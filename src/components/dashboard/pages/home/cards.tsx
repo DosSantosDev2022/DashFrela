@@ -23,7 +23,7 @@ const CardsDash = ({
   iconColor,
 }: CardsDashProps) => {
   return (
-    <Card className=" flex flex-col w-64 h-40">
+    <Card className=" flex flex-col w-80 h-40">
       <CardHeader className="flex-row justify-between items-center ">
         <CardTitle className="text-lg font-semibold text-MyColor01">
           {name}

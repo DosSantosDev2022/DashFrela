@@ -4,6 +4,7 @@ import UserProfile from './user'
 
 import { NotificationsIcon } from './notifications'
 import { Input } from '@/components/ui/input'
+import { ToggleTheme } from '@/components/theme/toggleTheme'
 
 const HeaderDash = () => {
   return (
@@ -16,6 +17,7 @@ const HeaderDash = () => {
         <Input className="w-[20rem] " placeholder="Search..." />
         <div className="flex items-center justify-center gap-5 mr-6">
           <NotificationsIcon />
+          <ToggleTheme />
           <UserProfile />
         </div>
 

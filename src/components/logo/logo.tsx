@@ -1,16 +1,35 @@
+'use client'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 const LogoDark = () => {
   return (
-    <div className="relative w-[250px] h-[60px]">
-      <Image
-        src={'/Logo-Dark.svg'}
-        alt="Logo Dark DashFrela"
-        fill
-        style={{ objectFit: 'contain' }}
-      />
-    </div>
+    <Image
+      width={150}
+      height={50}
+      src={'/Logo-Dark.svg'}
+      alt="Logo Dark DashFrela"
+    />
   )
 }
 
-export default LogoDark
+const LogoLight = () => {
+  return (
+    <Image
+      width={150}
+      height={50}
+      src={'/Logo-White.svg'}
+      alt="Logo Light DashFrela"
+    />
+  )
+}
+
+const Logo = () => {
+  const { theme } = useTheme()
+  console.log(theme)
+  const LogoComponent = theme === 'dark' ? LogoLight : LogoDark
+
+  return <LogoComponent />
+}
+
+export default Logo

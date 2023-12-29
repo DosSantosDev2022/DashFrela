@@ -45,7 +45,7 @@ const UserProfile = () => {
               <AvatarFallback>JS</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent align="end">
             <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {dropdownlinks.map((link) => (
