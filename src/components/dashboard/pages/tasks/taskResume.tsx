@@ -12,9 +12,18 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Separator } from '@/components/ui/separator'
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination'
 
 const headList = [
-  { nome: 'Nome do projeto' },
+  { nome: 'Nome da tarefa' },
   { nome: 'Horas' },
   { nome: 'Prioridade' },
   { nome: 'Projeto' },
@@ -22,7 +31,7 @@ const headList = [
 ]
 const taskDetails = [
   {
-    Projects: {
+    Task: {
       id: 1,
       nome: 'Nome tarefa',
       hora: '12hs',
@@ -32,7 +41,7 @@ const taskDetails = [
     },
   },
   {
-    Projects: {
+    Task: {
       id: 2,
       nome: 'Nome tarefa',
       hora: '12hs',
@@ -42,7 +51,7 @@ const taskDetails = [
     },
   },
   {
-    Projects: {
+    Task: {
       id: 3,
       nome: 'Nome tarefa',
       hora: '12hs',
@@ -52,7 +61,7 @@ const taskDetails = [
     },
   },
   {
-    Projects: {
+    Task: {
       id: 4,
       nome: 'Nome tarefa',
       hora: '12hs',
@@ -62,7 +71,7 @@ const taskDetails = [
     },
   },
   {
-    Projects: {
+    Task: {
       id: 5,
       nome: 'Nome tarefa',
       hora: '12hs',
@@ -75,7 +84,7 @@ const taskDetails = [
 
 export function TaskResumeTable() {
   return (
-    <div className="overflow-auto ">
+    <div className="">
       <Table className="p-4 rounded-md  flex flex-col gap-2 shadow-md border">
         <div className="flex justify-between items-center px-3 py-3">
           <h3 className="font-semibold text-MyColor01 ">
@@ -98,23 +107,23 @@ export function TaskResumeTable() {
         <TableBody className="">
           {taskDetails.map((item) => (
             <TableRow
-              key={item.Projects.id}
+              key={item.Task.id}
               className="flex justify-between gap-3 mb-2 p-2 shadow-sm bg-secondary"
             >
               <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.nome || ''}
+                {item.Task.nome || ''}
               </TableCell>
               <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.hora || ''}
+                {item.Task.hora || ''}
               </TableCell>
               <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.Prioridade || ''}
+                {item.Task.Prioridade || ''}
               </TableCell>
               <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.Cliente || ''}
+                {item.Task.Cliente || ''}
               </TableCell>
               <TableCell className="w-full flex items-center text-secondary-foreground">
-                <Progress value={item.Projects.Progresso} />
+                <Progress value={item.Task.Progresso} />
               </TableCell>
               <TableCell className="flex items-center justify-start">
                 <Button
@@ -129,7 +138,31 @@ export function TaskResumeTable() {
             </TableRow>
           ))}
         </TableBody>
-        <div className=" flex items-end justify-center  w-full p-2 text-center"></div>
+
+        <div className="w-full p-2 flex items-center justify-end">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationEllipsis />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
       </Table>
     </div>
   )
