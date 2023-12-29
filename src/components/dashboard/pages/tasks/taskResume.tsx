@@ -2,7 +2,7 @@ import PriorityTag from '@/components/dashboard/globals/priorityTags'
 import { RxDashboard } from 'react-icons/rx'
 import { Progress } from '@/components/ui/progress'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+
 import {
   Table,
   TableBody,
@@ -11,56 +11,75 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
 import { Separator } from '@/components/ui/separator'
 
 const headList = [
   { nome: 'Nome do projeto' },
   { nome: 'Horas' },
   { nome: 'Prioridade' },
-  { nome: 'Cliente' },
+  { nome: 'Projeto' },
   { nome: 'Progresso' },
 ]
-const projectDetails = [
+const taskDetails = [
   {
     Projects: {
       id: 1,
-      nome: 'Nome projeto',
+      nome: 'Nome tarefa',
       hora: '12hs',
       Prioridade: <PriorityTag namePriority="Prioridade Alta" />,
-      Cliente: 'Nome cliente',
-      Progresso: 65,
+      Cliente: 'Nome projeto',
+      Progresso: 15,
     },
   },
   {
     Projects: {
       id: 2,
-      nome: 'Nome projeto',
+      nome: 'Nome tarefa',
       hora: '12hs',
       Prioridade: <PriorityTag namePriority="Prioridade média" />,
-      Cliente: 'Nome cliente',
-      Progresso: 45,
+      Cliente: 'Nome projeto',
+      Progresso: 95,
     },
   },
   {
     Projects: {
       id: 3,
-      nome: 'Nome projeto',
+      nome: 'Nome tarefa',
       hora: '12hs',
-      Prioridade: <PriorityTag namePriority="Prioridade média" />,
-      Cliente: 'Nome cliente',
-      Progresso: 75,
+      Prioridade: <PriorityTag namePriority="Prioridade baixa" />,
+      Cliente: 'Nome projeto',
+      Progresso: 62,
+    },
+  },
+  {
+    Projects: {
+      id: 4,
+      nome: 'Nome tarefa',
+      hora: '12hs',
+      Prioridade: <PriorityTag namePriority="Prioridade baixa" />,
+      Cliente: 'Nome projeto',
+      Progresso: 62,
+    },
+  },
+  {
+    Projects: {
+      id: 5,
+      nome: 'Nome tarefa',
+      hora: '12hs',
+      Prioridade: <PriorityTag namePriority="Prioridade baixa" />,
+      Cliente: 'Nome projeto',
+      Progresso: 62,
     },
   },
 ]
 
-export function ProjectListResum() {
+export function TaskResumeTable() {
   return (
-    <>
+    <div className="overflow-auto ">
       <Table className="p-4 rounded-md  flex flex-col gap-2 shadow-md border">
         <div className="flex justify-between items-center px-3 py-3">
           <h3 className="font-semibold text-MyColor01 ">
-            Projetos em andamento
+            Tarefas em andamento
           </h3>
         </div>
         <Separator />
@@ -77,7 +96,7 @@ export function ProjectListResum() {
           </TableRow>
         </TableHeader>
         <TableBody className="">
-          {projectDetails.map((item) => (
+          {taskDetails.map((item) => (
             <TableRow
               key={item.Projects.id}
               className="flex justify-between gap-3 mb-2 p-2 shadow-sm bg-secondary"
@@ -110,12 +129,8 @@ export function ProjectListResum() {
             </TableRow>
           ))}
         </TableBody>
-        <div className=" flex items-end justify-center  w-full p-2 text-center">
-          <Button size={'sm'} variant={'ghost'} asChild>
-            <Link href={'/dashboard/projects'}>Ver todos os projetos</Link>
-          </Button>
-        </div>
+        <div className=" flex items-end justify-center  w-full p-2 text-center"></div>
       </Table>
-    </>
+    </div>
   )
 }
