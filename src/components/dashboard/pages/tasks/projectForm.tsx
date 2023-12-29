@@ -20,23 +20,23 @@ export function ProjectForm() {
   return (
     <form className="flex flex-col gap-3">
       <div className="w-full space-y-3">
-        <Label>Nome do projeto</Label>
-        <Input placeholder="Insira o nome do seu projeto" />
+        <Label>Nome da tarefa</Label>
+        <Input placeholder="Insira o nome da tarefa" />
       </div>
       <div className="w-full space-y-3">
-        <Label>Descrição do projeto</Label>
-        <Textarea placeholder="Insira o nome do seu projeto" />
+        <Label>Descrição da sua tarefa</Label>
+        <Textarea placeholder="Descreva a sua tarefa" />
       </div>
       <div className=" space-y-3 w-full">
-        <Label>Selecione o cliente</Label>
+        <Label>Selecione o projeto</Label>
         <Select>
           <SelectTrigger className="w-full">
-            <SelectValue placeholder="Clientes" />
+            <SelectValue placeholder="Projetos" />
           </SelectTrigger>
           <SelectContent className="outline-none">
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
+            <SelectItem value="Projeto 01">Projeto 01</SelectItem>
+            <SelectItem value="Projeto 02">Projeto 02</SelectItem>
+            <SelectItem value="Projeto 03">Projeto 03</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -61,25 +61,6 @@ export function ProjectForm() {
                   {item.children}
                 </SelectItem>
               ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-      <div className="flex items-center justify-between gap-2">
-        <div className="w-full space-y-3">
-          <Label>Valor do projeto</Label>
-          <Input type="text" placeholder="Insira o nome do seu projeto" />
-        </div>
-        <div className=" space-y-3 w-full">
-          <Label>Formas de pagamentos</Label>
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Pagamento" />
-            </SelectTrigger>
-            <SelectContent className="outline-none">
-              <SelectItem value="card">Cartão de crédito</SelectItem>
-              <SelectItem value="dark">Pix</SelectItem>
-              <SelectItem value="system">Dinheiro</SelectItem>
             </SelectContent>
           </Select>
         </div>

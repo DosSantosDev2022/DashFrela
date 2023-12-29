@@ -1,7 +1,9 @@
+import { TaskModal } from '@/components/dashboard/pages/tasks/projectModal'
+
 export default function TasksPage() {
   return (
     <>
-      <h1>Página de tarefas</h1>
+      <TaskModal />
     </>
   )
 }
