@@ -25,6 +25,11 @@ Oferece uma seção dedicada para visualização e controle financeiro, com ferr
 
 ## Tecnologias Utilizadas
 
-<div>
   ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-</div>
+  ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+  ![Radix UI](https://img.shields.io/badge/radix%20ui-161618.svg?style=for-the-badge&logo=radix-ui&logoColor=white)
+  ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
+
+## Conclusão
+O DashFreela é mais do que apenas um painel de administração; é uma ferramenta completa para freelancers gerenciarem seus projetos de forma eficaz. Com uma interface amigável e tecnologias robustas, o projeto visa proporcionar uma experiência de gerenciamento de trabalho mais fluida e produtiva para os profissionais independentes
