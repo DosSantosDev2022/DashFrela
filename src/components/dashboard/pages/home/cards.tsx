@@ -8,29 +8,29 @@ import {
 } from '@/components/ui/card'
 
 interface CardsDashProps {
-  name: string
-  icon: ReactNode
-  content: string
-  text: string
-  iconColor: string
+  name?: string
+  icon?: ReactNode
+  content?: string
+  text?: string
+  iconColor?: string
 }
 
-const CardsDash = ({
-  name,
-  icon,
+export function CardsDash({
   content,
-  text,
+  icon,
   iconColor,
-}: CardsDashProps) => {
+  name,
+  text,
+}: CardsDashProps) {
   return (
-    <Card className=" flex flex-col w-80 h-40">
+    <Card className=" flex flex-col w-full h-40">
       <CardHeader className="flex-row justify-between items-center ">
         <CardTitle className="text-lg font-semibold text-MyColor01">
           {name}
         </CardTitle>
         <i
-          className={`p-2 rounded-lg`}
-          style={{ backgroundColor: iconColor, color: 'white' }}
+          className={`p-2 rounded-lg bg-[${iconColor}]`}
+          style={{ color: 'black' }}
         >
           {icon}
         </i>
@@ -45,5 +45,3 @@ const CardsDash = ({
     </Card>
   )
 }
-
-export default CardsDash

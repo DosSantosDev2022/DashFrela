@@ -7,7 +7,7 @@ interface ProgressBarProps {
   progress: number
 }
 
-const ProgressBar = ({ progress }: ProgressBarProps) => {
+export function ProgressBar({ progress }: ProgressBarProps) {
   const [localprogress, setLocalProgress] = React.useState(progress)
 
   React.useEffect(() => {
@@ -34,5 +34,3 @@ const ProgressBar = ({ progress }: ProgressBarProps) => {
     </Progress.Root>
   )
 }
-
-export default ProgressBar

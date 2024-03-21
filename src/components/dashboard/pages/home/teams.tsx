@@ -1,4 +1,4 @@
-const Teams = () => {
+export function Teams() {
   return (
     <>
       <div
@@ -11,5 +11,3 @@ const Teams = () => {
     </>
   )
 }
-
-export default Teams

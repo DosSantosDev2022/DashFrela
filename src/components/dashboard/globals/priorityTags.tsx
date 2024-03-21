@@ -1,42 +1,25 @@
-import React from 'react'
-
 interface PrioridadeTasksProps {
   namePriority: string
 }
 
-const PriorityTag = ({ namePriority }: PrioridadeTasksProps) => {
-  // Função para determinar a classe de cor com base no nome da prioridade
+const priorityColors: Record<string, string> = {
+  Alta: 'bg-red-500',
+  Média: 'bg-amber-400',
+  Baixa: 'bg-green-500',
+}
+
+export function PriorityTag({ namePriority }: PrioridadeTasksProps) {
   const getClassBasedOnPriority = (prioridade: string) => {
-    switch (prioridade) {
-      /* Prioridades Tags */
-      case 'Prioridade Alta':
-        return 'bg-red-500'
-      case 'Prioridade média':
-        return 'bg-amber-400'
-      case 'Prioridade Baixa':
-        return 'bg-green-500'
-      /* Status tags */
-      case 'Pendente':
-        return 'bg-red-500'
-      case 'Em andamento':
-        return 'bg-amber-400'
-      case 'Concluído':
-        return 'bg-green-500'
-      default:
-        return 'bg-gray-400'
-    }
+    return priorityColors[prioridade]
   }
 
-  // Obtém a classe de cor com base na prioridade
   const corClasse = getClassBasedOnPriority(namePriority)
 
   return (
     <div
-      className={`p-1 text-xs font-normal text-white rounded-md w-[120px] h-7 flex items-center justify-center ${corClasse}`}
+      className={`text-[10px] font-normal text-white rounded-md w-14  h-5 flex items-center justify-center ${corClasse}`}
     >
       {namePriority}
     </div>
   )
 }
-
-export default PriorityTag

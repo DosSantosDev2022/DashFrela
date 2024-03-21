@@ -1,4 +1,3 @@
-import PriorityTag from '@/components/dashboard/globals/priorityTags'
 import { RxDashboard } from 'react-icons/rx'
 import { Progress } from '@/components/ui/progress'
 import { Button } from '@/components/ui/button'
@@ -11,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
+import { prisma } from '@/lib/prisma'
 import { Separator } from '@/components/ui/separator'
 
 const headList = [
@@ -21,13 +20,13 @@ const headList = [
   { nome: 'Cliente' },
   { nome: 'Progresso' },
 ]
-const projectDetails = [
+/* const projectDetails = [
   {
     Projects: {
       id: 1,
       nome: 'Nome projeto',
       hora: '12hs',
-      Prioridade: <PriorityTag namePriority="Prioridade Alta" />,
+      Prioridade: <PriorityTag namePriority="Alta" />,
       Cliente: 'Nome cliente',
       Progresso: 65,
     },
@@ -37,7 +36,7 @@ const projectDetails = [
       id: 2,
       nome: 'Nome projeto',
       hora: '12hs',
-      Prioridade: <PriorityTag namePriority="Prioridade média" />,
+      Prioridade: <PriorityTag namePriority="Média" />,
       Cliente: 'Nome cliente',
       Progresso: 45,
     },
@@ -47,14 +46,15 @@ const projectDetails = [
       id: 3,
       nome: 'Nome projeto',
       hora: '12hs',
-      Prioridade: <PriorityTag namePriority="Prioridade média" />,
+      Prioridade: <PriorityTag namePriority="Baixa" />,
       Cliente: 'Nome cliente',
       Progresso: 75,
     },
   },
-]
+] */
 
-export function ProjectListResum() {
+export async function ProjectListResum() {
+  const project = await prisma.project.findMany()
   return (
     <>
       <Table className="p-4 rounded-md  flex flex-col gap-2 shadow-md border">
@@ -64,11 +64,11 @@ export function ProjectListResum() {
           </h3>
         </div>
         <Separator />
-        <TableHeader className="bg-primary">
+        <TableHeader className="bg-secondary">
           <TableRow className="flex">
             {headList.map((item) => (
               <TableHead
-                className="font-bold flex items-center justify-start w-full text-primary-foreground "
+                className="font-normal px-0 p-2 flex items-center justify-start w-full text-secondary-foreground "
                 key={item.nome}
               >
                 {item.nome}
@@ -77,25 +77,25 @@ export function ProjectListResum() {
           </TableRow>
         </TableHeader>
         <TableBody className="">
-          {projectDetails.map((item) => (
+          {project.map((item) => (
             <TableRow
-              key={item.Projects.id}
-              className="flex justify-between gap-3 mb-2 p-2 shadow-sm bg-secondary"
+              key={item.id}
+              className="flex justify-between gap-3 shadow-sm bg-secondary"
             >
-              <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.nome || ''}
+              <TableCell className="w-full flex items-center justify-start text-secondary-foreground">
+                {item.name || ''}
               </TableCell>
-              <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.hora || ''}
+              <TableCell className="w-full flex items-center justify-start text-secondary-foreground">
+                {item.name || ''}
               </TableCell>
-              <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.Prioridade || ''}
+              <TableCell className="w-full flex items-center justify-start text-secondary-foreground">
+                {item.priority || ''}
               </TableCell>
-              <TableCell className="w-full flex items-center text-secondary-foreground">
-                {item.Projects.Cliente || ''}
+              <TableCell className="w-full flex items-center justify-start text-secondary-foreground">
+                {item.clientName || ''}
               </TableCell>
-              <TableCell className="w-full flex items-center text-secondary-foreground">
-                <Progress value={item.Projects.Progresso} />
+              <TableCell className="w-full flex items-center justify-start text-secondary-foreground">
+                <Progress value={10} />
               </TableCell>
               <TableCell className="flex items-center justify-start">
                 <Button
